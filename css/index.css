@@ -1,4 +1,5 @@
-@import url(":/media.css");
-@import url(":/theme.css");
-@import url(":/ui.css");
-@import url(":/utility.css");
+/* index.css */
+@import url("media.css");
+@import url("theme.css");
+@import url("ui.css");
+@import url("utility.css");

@@ -1,1 +1,17 @@
 /*header, footer, navigation, alerts, poppups */
+
+/*header*/
+.primary-header {
+    background-color: #fff;
+    border-bottom: 1px solid #e5e5e5;
+    height: 60px;
+    position: relative;
+    z-index: 100;
+}
+
+.logo img {
+    height: 40px;
+    margin: 10px 0;
+    width: 40px;
+}
+
