@@ -10,3 +10,21 @@
     color: #000;
     text-decoration: none;
 }
+
+/*____________________________________*/
+
+
+/*footer*/
+.footer-container {
+    background-color: #FCDCB4;
+    font-size: 16px;
+    border-top: 1px solid #e5e5e5;
+}
+
+.footer-section {
+    color: #000;
+}
+
+.social-media ul {
+    list-style-type: none;
+}

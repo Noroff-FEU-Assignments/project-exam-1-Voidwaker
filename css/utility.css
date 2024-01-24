@@ -3,7 +3,6 @@
 /*header*/
 .primary-header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 
@@ -25,5 +24,27 @@
 .nav-section.left,
 .nav-section.right {
     flex-grow: 1;
+    justify-content: space-around
     
 }
+
+/*------------------------------------*/
+
+/* footer */ 
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-section {
+   flex: 1;
+}
+.social-media ul {
+    display: flex;
+    justify-content: center;
+}
+
+.social-media li a{
+    display: block;
+}
+/*------------------------------------*/

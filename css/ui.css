@@ -6,7 +6,6 @@
 .primary-header {
     border-bottom: 1px solid #e5e5e5;
     height: 60px;
-    position: relative;
     z-index: 100;
     padding: 0 15px;
 }
@@ -20,4 +19,33 @@
   padding: 0 10px;
 }
 
+/*------------------------------------*/
+
+/* footer */
+.footer-container {
+    padding: 20px;
+    height: 50px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.footer-section li{
+    height: 60px;
+
+}
+
+.social-media li {
+    margin: 0 10px;
+ }
+ .social-media li a {
+     height: 50px;
+ }
+ 
+ .social-meida img {
+     height: 100px;
+     width: auto;
+ }
+ .social-media ul {
+    padding: 0;
+ }
+/*------------------------------------*/
 
