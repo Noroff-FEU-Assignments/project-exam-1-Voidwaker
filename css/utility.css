@@ -7,6 +7,23 @@
     align-items: center;
 }
 
-.logo img {
-    justify-items: center;
+.logo{
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+
+.primary-header a:hover {
+   text-decoration: underline;
+}
+
+.nav-section {
+    display: flex;
+}
+
+.nav-section.left,
+.nav-section.right {
+    flex-grow: 1;
+    
 }
