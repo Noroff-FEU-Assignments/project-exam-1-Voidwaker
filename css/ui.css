@@ -49,3 +49,40 @@
  }
 /*------------------------------------*/
 
+/* homepage carousell */
+.carousel {
+    position: relative;
+    width: 80%; /* Juster etter behov */
+    margin: auto;
+}
+
+.images {
+    display: flex;
+    overflow: hidden;
+}
+
+.carousel img {
+    max-width: 100%;
+    transition: transform 0.5s ease;
+}
+
+#prevButton, #nextButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+#prevButton {
+    left: 10px;
+}
+
+#nextButton {
+    right: 10px;
+}
+
+/*------------------------------------*/

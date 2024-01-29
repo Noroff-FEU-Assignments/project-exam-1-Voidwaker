@@ -1,13 +1,16 @@
+// Importer eventuelle nødvendige moduler her (hvis det er noen)
+
+// Eksporter funksjonen på modulnivå
+export function initializeCarousel() {
+    // Koden for å initialisere karusellen
+}
+
+// Legg til eventuelle hendelseslyttere eller kodedeler som trenger DOMContentLoaded her
 document.addEventListener("DOMContentLoaded", () => {
     const imageContainer = document.getElementById("imageContainer");
     let index = 0;
-});
 
-// carousel.js
-export function initializeCarousel() {
-    const imageContainer = document.getElementById("imageContainer");
-}
-    let index = 0;
+    // Kode for hendelseslytteren
 
     function fetchImages() {
         fetch("https://bollingvaaler.no/wp-json/wp/v2/media")
@@ -49,3 +52,4 @@ export function initializeCarousel() {
 
     // Initialiserer karrusellen etter at bildene er lastet
     window.addEventListener('load', initializeCarousel);
+});
