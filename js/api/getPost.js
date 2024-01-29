@@ -33,8 +33,9 @@ function displayPosts(posts) {
             postElement.appendChild(imgElement);
         }
 
+        // Endret fra textContent til innerHTML for å dekode HTML-entiteter
         const titleElement = document.createElement('h2');
-        titleElement.textContent = post.title.rendered;
+        titleElement.innerHTML = post.title.rendered;
         postElement.appendChild(titleElement);
 
         const excerptElement = document.createElement('div');
@@ -44,6 +45,7 @@ function displayPosts(posts) {
         postsContainer.appendChild(postElement);
     });
 }
+
 
 
 document.addEventListener('DOMContentLoaded', fetchWordPressPosts);
