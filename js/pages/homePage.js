@@ -1,6 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
     const imageContainer = document.getElementById("imageContainer");
     let index = 0;
+});
+
+// carousel.js
+export function initializeCarousel() {
+    const imageContainer = document.getElementById("imageContainer");
+}
+    let index = 0;
 
     function fetchImages() {
         fetch("https://bollingvaaler.no/wp-json/wp/v2/media")
@@ -24,24 +31,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     fetchImages();
 
-    function initializeCarousel() {
-        const images = document.querySelectorAll(".carousel img");
-        const totalImages = images.length;
-        document.getElementById("prevButton").addEventListener("click", () => {
-            index = (index - 1 + totalImages) % totalImages;
-            updateCarousel();
-        });
-        document.getElementById("nextButton").addEventListener("click", () => {
-            index = (index + 1) % totalImages;
-            updateCarousel();
-        });
+    const images = document.querySelectorAll(".carousel img");
+    const totalImages = images.length;
+    document.getElementById("prevButton").addEventListener("click", () => {
+        index = (index - 1 + totalImages) % totalImages;
+        updateCarousel();
+    });
+    document.getElementById("nextButton").addEventListener("click", () => {
+        index = (index + 1) % totalImages;
+        updateCarousel();
+    });
 
-        function updateCarousel() {
-            const newTransformValue = -index * 100;
-            imageContainer.style.transform = `translateX(${newTransformValue}%)`;
-        }
+    function updateCarousel() {
+        const newTransformValue = -index * 100;
+        imageContainer.style.transform = `translateX(${newTransformValue}%)`;
     }
 
     // Initialiserer karrusellen etter at bildene er lastet
     window.addEventListener('load', initializeCarousel);
-});
