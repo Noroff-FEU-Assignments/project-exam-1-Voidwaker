@@ -1,4 +1,5 @@
 export function fetchWordPressPosts() {
+    console.log('fetchWordPressPosts starter'); // For debugging
     const endpoint = "https://bollingvaaler.no/wp-json/wp/v2/posts?_embed";
 
     fetch(endpoint)
@@ -9,7 +10,8 @@ export function fetchWordPressPosts() {
             return response.json();
         })
         .then(posts => {
-            displayPosts(posts); // Kaller displayPosts for å vise innleggene
+            console.log('Innlegg hentet:', posts); // For debugging
+            displayPosts(posts);
         })
         .catch(error => {
             console.error('There has been a problem with your fetch operation:', error);
@@ -23,20 +25,20 @@ function displayPosts(posts) {
         const postElement = document.createElement('div');
         postElement.className = 'post';
 
-        // Legg til bilde hvis tilgjengelig
-        if (post._embedded && post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0].source_url) {
-            const imgElement = document.createElement('img');
-            imgElement.src = post._embedded['wp:featuredmedia'][0].source_url;
+        // Trekker ut første bilde fra innleggets innhold
+        const parser = new DOMParser();
+        const contentDocument = parser.parseFromString(post.content.rendered, "text/html");
+        const imgElement = contentDocument.querySelector('img');
+        if (imgElement && imgElement.src) {
             postElement.appendChild(imgElement);
         }
 
         const titleElement = document.createElement('h2');
         titleElement.textContent = post.title.rendered;
+        postElement.appendChild(titleElement);
 
         const excerptElement = document.createElement('div');
         excerptElement.innerHTML = post.excerpt.rendered;
-
-        postElement.appendChild(titleElement);
         postElement.appendChild(excerptElement);
 
         postsContainer.appendChild(postElement);
@@ -44,6 +46,7 @@ function displayPosts(posts) {
 }
 
 
-// Kaller fetchWordPressPosts funksjonen når siden lastes
 document.addEventListener('DOMContentLoaded', fetchWordPressPosts);
+
+
 
