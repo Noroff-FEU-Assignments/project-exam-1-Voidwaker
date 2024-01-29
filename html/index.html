@@ -6,29 +6,30 @@
     <title>ODAS Blogg</title>
     <link rel="stylesheet" href="../css/index.css">
 </head>
-<header>
-    <nav class="primary-header">
-        <div class="nav-section left">
-            <a href="allblogposts.html">All Blogs</a>
-            <a href="about.html">About</a>
-        </div>
-        <div class="logo">
-            <a href="#">
-                <img src="../images/logo.png" alt="logo">
-            </a>
-        </div>
-        <div class="nav-section right">
-            <a href="contact.html">Contact</a>
-        </div>
-    </nav>
-</header>
-    <div class="carousel">
-        <button class="arrow left">&lt;</button>
-        <div class="images">
+<body class="home-page">
+    <header>
+        <nav class="primary-header">
+            <div class="nav-section left">
+                <a href="allblogposts.html">All Blogs</a>
+                <a href="about.html">About</a>
+            </div>
+            <div class="logo">
+                <a href="#">
+                    <img src="../images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="nav-section right">
+                <a href="contact.html">Contact</a>
+            </div>
+        </nav>
+    </header>
 
-        </div>
-        <button class="arrow right">&gt;</button>
+    <div class="carousel">
+        <div class="images" id="imageContainer"></div>
+        <button id="prevButton">&lt;</button>
+        <button id="nextButton">&gt;</button>
     </div>
+
     <footer>
         <div class="footer-container">
             <div class="footer-section">
@@ -36,13 +37,14 @@
             </div>
             <div class="footer-section social-media">
                 <ul>
-                    <li><img src="../images/Instagram.png" alt="Instagram"></a></li>
-                    <li><img src="../images/Facebook.png" alt="Facebook"></a></li>
-                    <li><img src="../images/Twitter.png" alt="Twitter"></a></li>
+                    <li><a href="your-instagram-link"><img src="../images/Instagram.png" alt="Instagram"></a></li>
+                    <li><a href="your-facebook-link"><img src="../images/Facebook.png" alt="Facebook"></a></li>
+                    <li><a href="your-twitter-link"><img src="../images/Twitter.png" alt="Twitter"></a></li>
                 </ul>
             </div>
         </div>
     </footer>
-    
+
+    <!-- Husk å legge til script-tag for index.js her hvis du har JavaScript -->
 </body>
 </html>
