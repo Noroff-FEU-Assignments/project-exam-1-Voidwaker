@@ -48,6 +48,7 @@ function displayPosts(posts) {
 
 
 
+
 document.addEventListener('DOMContentLoaded', fetchWordPressPosts);
 
 

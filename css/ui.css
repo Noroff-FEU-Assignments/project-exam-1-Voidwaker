@@ -50,21 +50,23 @@
 /*------------------------------------*/
 
 /* homepage carousell */
-.carousel {
-    position: relative;
-    width: 80%; /* Juster etter behov */
-    margin: auto;
-}
-
-.images {
-    display: flex;
+#carousel {
     overflow: hidden;
+    width: 100%; /* Juster denne etter behov, kan også settes til en fast bredde */
 }
 
-.carousel img {
-    max-width: 100%;
-    transition: transform 0.5s ease;
+#imageContainer {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
 }
+
+#imageContainer img {
+    width: 25%; /* Hvert bilde tar 25% av containerens bredde */
+    object-fit: cover; /* Tilpasser bildets størrelse for å fylle tilgjengelig plass */
+    height: auto; /* Justerer bildets høyde automatisk basert på bredden for å opprettholde aspektforholdet */
+}
+
+
 
 #prevButton, #nextButton {
     position: absolute;
