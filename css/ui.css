@@ -49,39 +49,53 @@
  }
 /*------------------------------------*/
 
+
 /* homepage carousell */
-#carousel {
-    overflow: hidden;
-    width: 100%; /* Fyller hele bredden av containeren */
+
+
+#postsContainer {
+    position: relative;
+    width: 100%;
+  }
+
+.post {
+    display: inline-block;
+    width: calc(25% - 20px); /* Juster bredden etter behov */
+    margin: 0 10px;
+  }
+  .post h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+.post img {
+    width: 100%;
+    height: auto;
+}
+.carousel {
+    position: relative; /* Posisjon relatert til foreldrelementet */
+    border: 2px solid black;
+    background-color: #FCDCB4;
+    padding: 20px;
 }
 
-#imageContainer {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
+.prev-button,
+.next-button {
+    position: absolute; /* Posisjon absolutt i forhold til karusellen */
+    top: 50%; /* Plasser vertikalt midt i forhold til karusellens høyde */
+    transform: translateY(-50%); /* Juster plasseringen for å sentrere vertikalt */
+    background: none; /* Fjern bakgrunnsfarge */
+    border: none; /* Fjern ramme */
+    cursor: pointer; /* Endre markøren til en pil */
+    z-index: 1; /* Sørg for at knappene alltid er over karusellen */
 }
 
-#imageContainer img {
-    width: 25%; /* Hvert bilde tar 25% av containerens bredde */
-    object-fit: cover; /* Tilpasser bildets størrelse for å fylle tilgjengelig plass */
-    
-}
-#prevButton, #nextButton {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
+.prev-button {
+    left: 0; /* Plasser til venstre for karusellen */
 }
 
-#prevButton {
-    left: 10px;
+.next-button {
+    right: 0; /* Plasser til høyre for karusellen */
 }
 
-#nextButton {
-    right: 10px;
-}
 
 /*------------------------------------*/

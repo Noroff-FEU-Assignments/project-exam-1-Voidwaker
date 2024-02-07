@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Funksjon for å hente og vise blogginnlegg
 function fetchBlogPosts() {
     // URL for å hente blogginnlegg fra API-et
-    const blogPostsURL = 'https://bollingvaaler.no/wp-json/wp/v2/posts?_embed';
+    const blogPostsURL = 'https://bollingvaaler.no/wp-json/wp/v2/posts';
 
     // Hent blogginnlegg fra API-et
     fetch(blogPostsURL)
@@ -53,14 +53,14 @@ function createCarousel(groupedPosts) {
     // Finn kontaineren for blogginnlegg
     const postsContainer = document.getElementById('postsContainer');
 
-    // Opprett navigasjonsknapper for karusellen og send med postsContainer
-    createNavigationButtons(postsContainer);
-
     // Initialiser index for nåværende visning
     let currentIndex = 0;
 
     // Vis den første gruppen med blogginnlegg
     displayPosts(groupedPosts[currentIndex]);
+
+    // Opprett navigasjonsknapper for karusellen
+    createNavigationButtons(postsContainer);
 
     // Funksjon for å vise blogginnlegg i karusellen
     function displayPosts(posts) {
@@ -71,31 +71,41 @@ function createCarousel(groupedPosts) {
         posts.forEach(post => {
             const postElement = document.createElement('div');
             postElement.classList.add('post');
-            // Sjekk om det er et fremhevet bilde tilgjengelig for innlegget
-            const featuredMedia = post._embedded && post._embedded['wp:featuredmedia'] ? post._embedded['wp:featuredmedia'][0] : null;
             // Legg til innholdet i blogginnlegget (tittel og bilde)
             postElement.innerHTML = `
                 <h2>${post.title.rendered}</h2>
-                ${featuredMedia ? `<img src="${featuredMedia.source_url}" alt="${featuredMedia.alt_text}">` : ''}
+                <img src="${post.jetpack_featured_media_url}" alt="${post.title.rendered}">
             `;
             postsContainer.appendChild(postElement);
         });
     }
+
+    // Funksjon for å opprette navigasjonsknapper
+    function createNavigationButtons(container) {
+        const prevButton = document.createElement('button');
+        prevButton.id = 'prevButton';
+        prevButton.textContent = 'Previous';
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + groupedPosts.length) % groupedPosts.length;
+            displayPosts(groupedPosts[currentIndex]);
+        });
+
+        const nextButton = document.createElement('button');
+        nextButton.id = 'nextButton';
+        nextButton.textContent = 'Next';
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % groupedPosts.length;
+            displayPosts(groupedPosts[currentIndex]);
+        });
+
+        container.appendChild(prevButton);
+        container.appendChild(nextButton);
+    }
 }
 
-// Funksjon for å opprette navigasjonsknapper
-function createNavigationButtons(container) {
-    const prevButton = document.createElement('button');
-    prevButton.id = 'prevButton';
-    prevButton.textContent = 'Previous';
 
-    const nextButton = document.createElement('button');
-    nextButton.id = 'nextButton';
-    nextButton.textContent = 'Next';
 
-    container.appendChild(prevButton);
-    container.appendChild(nextButton);
-}
+
 
 
 

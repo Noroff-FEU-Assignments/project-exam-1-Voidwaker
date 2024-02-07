@@ -12,6 +12,14 @@
 }
 
 /*____________________________________*/
+/* homepage carousell */
+.carousel {
+    border: 2px solid black; /* Ramme med svart farge og tykkelse på 2 piksler */
+    background-color: #FCDCB4; /* Bakgrunnsfarge inni rammen */
+    padding: 20px; /* Ekstra avstand mellom innholdet og rammen */
+    margin-top: 50px; /* Avstand fra toppen av siden */
+    margin-bottom: 50px; /* Avstand fra bunnen av siden */
+}
 
 
 /*footer*/
