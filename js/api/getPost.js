@@ -1,6 +1,8 @@
+export const allPostsURL = "https://bollingvaaler.no/wp-json/wp/v2/posts?per_page=12&_embed";
+
 export function fetchWordPressPosts() {
     console.log('fetchWordPressPosts starter'); // For debugging
-    return fetch(allPostsURL) // Bruker allPostsURL definert ovenfor
+    return fetch(allPostsURL)
         .then(response => {
             if (!response.ok) {
                 throw new Error(`Network response was not ok: ${response.statusText}`);
@@ -9,33 +11,29 @@ export function fetchWordPressPosts() {
         })
         .then(posts => {
             console.log('Innlegg hentet:', posts); // For debugging
-            return posts; // Returnerer innleggene for videre bruk
+            return posts;
         })
         .catch(error => {
             console.error('There has been a problem with your fetch operation:', error);
-            throw error; // Kaster feilen videre for å kunne håndtere den der funksjonen kalles
+            throw error;
         });
 }
 
-
-
+// Denne delen er ikke nødvendig hvis du allerede har den i hjemmesiden din
 export function displayPosts(posts) {
     console.log(posts); // For debugging
     const postsContainer = document.getElementById('postsContainer');
-    // Tømmer containeren for tidligere innlegg
     postsContainer.innerHTML = '';
 
-    // Anta at vi starter med de første 4 innleggene
     let startIndex = 0;
     const postsPerView = 4;
 
-    // Viser de første 4 innleggene
     updateView(startIndex, posts, postsPerView);
 
     document.getElementById('prevButton').addEventListener('click', () => {
         startIndex -= postsPerView;
         if (startIndex < 0) {
-            startIndex = posts.length - postsPerView; // Går til siste sett om vi er på starten
+            startIndex = posts.length - postsPerView;
         }
         updateView(startIndex, posts, postsPerView);
     });
@@ -43,7 +41,7 @@ export function displayPosts(posts) {
     document.getElementById('nextButton').addEventListener('click', () => {
         startIndex += postsPerView;
         if (startIndex >= posts.length) {
-            startIndex = 0; // Går tilbake til starten om vi er på slutten
+            startIndex = 0;
         }
         updateView(startIndex, posts, postsPerView);
     });
@@ -51,7 +49,7 @@ export function displayPosts(posts) {
 
 function updateView(startIndex, posts, postsPerView) {
     const postsContainer = document.getElementById('postsContainer');
-    postsContainer.innerHTML = ''; // Fjerner tidligere innlegg før ny visning
+    postsContainer.innerHTML = '';
 
     const endIndex = startIndex + postsPerView;
     for (let i = startIndex; i < endIndex && i < posts.length; i++) {
@@ -59,17 +57,12 @@ function updateView(startIndex, posts, postsPerView) {
         const postElement = document.createElement('div');
         postElement.className = 'post';
 
-        // Her kommer din eksisterende kode for å legge til bildet og teksten til hvert innlegg
+        // Legg til koden for å legge til bildet og teksten til hvert innlegg her
 
         postsContainer.appendChild(postElement);
     }
 }
 
-
-
-
-
-document.addEventListener('DOMContentLoaded', fetchWordPressPosts);
 
 
 

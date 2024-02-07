@@ -80,34 +80,25 @@ function createCarousel(groupedPosts) {
         });
     }
 
-    // Funksjon for å opprette navigasjonsknapper
-    function createNavigationButtons(container) {
-        const prevButton = document.createElement('button');
-        prevButton.id = 'prevButton';
-        prevButton.textContent = 'Previous';
-        prevButton.addEventListener('click', () => {
-            currentIndex = (currentIndex - 1 + groupedPosts.length) % groupedPosts.length;
-            displayPosts(groupedPosts[currentIndex]);
-        });
+   // Funksjon for å opprette navigasjonsknapper
+function createNavigationButtons(container) {
+    const prevButton = document.createElement('button');
+    prevButton.id = 'prevButton';
+    prevButton.textContent = 'Previous';
+    prevButton.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + groupedPosts.length) % groupedPosts.length;
+        displayPosts(groupedPosts[currentIndex]);
+    });
 
-        const nextButton = document.createElement('button');
-        nextButton.id = 'nextButton';
-        nextButton.textContent = 'Next';
-        nextButton.addEventListener('click', () => {
-            currentIndex = (currentIndex + 1) % groupedPosts.length;
-            displayPosts(groupedPosts[currentIndex]);
-        });
+    const nextButton = document.createElement('button');
+    nextButton.id = 'nextButton';
+    nextButton.textContent = 'Next';
+    nextButton.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % groupedPosts.length;
+        displayPosts(groupedPosts[currentIndex]);
+    });
 
-        container.appendChild(prevButton);
-        container.appendChild(nextButton);
-    }
+    container.appendChild(prevButton);
+    container.appendChild(nextButton);
 }
-
-
-
-
-
-
-
-
-
+}

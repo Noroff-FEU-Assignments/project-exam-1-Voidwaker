@@ -1,4 +1,4 @@
-import { fetchWordPressPosts } from './api/getPost.js'; // Legg til importen øverst i hjemmeside.js
+import { fetchWordPressPosts } from '../api/getPost.js'; // Legg til importen øverst i hjemmeside.js
 
 document.addEventListener('DOMContentLoaded', () => {
     fetchWordPressPosts();
