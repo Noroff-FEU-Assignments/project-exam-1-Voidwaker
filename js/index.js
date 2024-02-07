@@ -4,7 +4,6 @@ import { displayBlogPosts } from './pages/blogPage.js';
 import { fetchBlogPosts } from './pages/blogPage.js';
 import { fetchWordPressPosts } from './api/getPost.js';
 import { displayPosts } from './api/getPost.js';
-
 // Definer initHomePage-funksjonen
 function initHomePage() {
     fetchWordPressPosts().then(posts => {

@@ -76,6 +76,7 @@
     border: 2px solid black;
     background-color: #FCDCB4;
     padding: 20px;
+    height: 100vh;
 }
 
 .prev-button,
