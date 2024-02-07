@@ -1,28 +1,47 @@
-export function initializeCarousel(images) {
-    const imageContainer = document.getElementById("imageContainer");
-    let index = 0;
-    const totalImages = images.length;
+import { fetchWordPressPosts } from './api/getPost.js'; // Legg til importen øverst i hjemmeside.js
 
-    function updateCarousel() {
-        const newTransformValue = -index * 100;
-        imageContainer.style.transform = `translateX(${newTransformValue}%)`;
-    }
+document.addEventListener('DOMContentLoaded', () => {
+    fetchWordPressPosts();
+});
+
+function updateCarousel(imageContainer, index, totalPosts) {
+    const shiftPercentage = -(index * 100);
+    imageContainer.style.transform = `translateX(${shiftPercentage}%)`;
+}
+
+export function initializeCarousel(posts) {
+    const postsContainer = document.getElementById('postsContainer');
+    let index = 0; // Startpunkt for karusellen
+    const totalPosts = posts.length;
+    const postsPerView = 4;
+    const totalViews = Math.ceil(totalPosts / postsPerView); // Hvor mange "vinduer" eller visninger vi har
+
+    // Her kommer din eksisterende logikk for å legge til posts i postsContainer...
 
     document.getElementById("prevButton").addEventListener("click", () => {
-        index = (index - 1 + totalImages) % totalImages;
-        updateCarousel();
+        if (index > 0) {
+            index--; // Beveger seg bakover
+        } else {
+            index = totalViews - 1; // Går til den siste visningen hvis vi er på den første
+        }
+        updateCarousel(postsContainer, index * postsPerView, totalPosts);
     });
 
     document.getElementById("nextButton").addEventListener("click", () => {
-        index = (index + 1) % totalImages;
-        updateCarousel();
+        if (index < totalViews - 1) {
+            index++; // Beveger seg fremover
+        } else {
+            index = 0; // Går tilbake til start hvis vi er på den siste visningen
+        }
+        updateCarousel(postsContainer, index * postsPerView, totalPosts);
     });
-
-    updateCarousel(); // Oppdater karusellen umiddelbart etter initiering
 }
 
+
+
+
 // Legg til eventuelle hendelseslyttere eller kodedeler som trenger DOMContentLoaded her
-document.addEventListener("DOMContentLoaded", () => {
+ document.addEventListener("DOMContentLoaded", () => {
 
     function fetchImages() {
         fetch("https://bollingvaaler.no/wp-json/wp/v2/posts/")
@@ -57,3 +76,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
     fetchImages();
 });
+ 

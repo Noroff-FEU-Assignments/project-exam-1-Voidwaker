@@ -52,7 +52,7 @@
 /* homepage carousell */
 #carousel {
     overflow: hidden;
-    width: 100%; /* Juster denne etter behov, kan også settes til en fast bredde */
+    width: 100%; /* Fyller hele bredden av containeren */
 }
 
 #imageContainer {
@@ -63,11 +63,8 @@
 #imageContainer img {
     width: 25%; /* Hvert bilde tar 25% av containerens bredde */
     object-fit: cover; /* Tilpasser bildets størrelse for å fylle tilgjengelig plass */
-    height: auto; /* Justerer bildets høyde automatisk basert på bredden for å opprettholde aspektforholdet */
+    
 }
-
-
-
 #prevButton, #nextButton {
     position: absolute;
     top: 50%;

@@ -3,10 +3,17 @@ import { initializeCarousel } from "./pages/homePage.js";
 import { displayBlogPosts } from './pages/blogPage.js';
 import { fetchBlogPosts } from './pages/blogPage.js';
 import { fetchWordPressPosts } from './api/getPost.js';
+import { displayPosts } from './api/getPost.js';
 
 // Definer initHomePage-funksjonen
 function initHomePage() {
-    // Koden for å initialisere hjemmesiden
+    fetchWordPressPosts().then(posts => {
+        // Her kan du kalle displayPosts eller en annen funksjon for å vise postene
+        displayPosts(posts); // Anta at displayPosts er en funksjon som tar inn posts og viser dem i DOM
+    }).catch(error => {
+        console.error('Failed to fetch or display posts:', error);
+    });
+    
 }
 
 // Legg til eventlyttere for DOMContentLoaded
