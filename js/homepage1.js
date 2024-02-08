@@ -60,7 +60,7 @@ function createCarousel(groupedPosts) {
     displayPosts(groupedPosts[currentIndex]);
 
     // Opprett navigasjonsknapper for karusellen
-    createNavigationButtons(postsContainer);
+    createNavigationButtons();
 
     // Funksjon for å vise blogginnlegg i karusellen
     function displayPosts(posts) {
@@ -71,34 +71,41 @@ function createCarousel(groupedPosts) {
         posts.forEach(post => {
             const postElement = document.createElement('div');
             postElement.classList.add('post');
-            // Legg til innholdet i blogginnlegget (tittel og bilde)
+
+            // Legg til innholdet i blogginnlegget (tittel og bilde) og en ankelenke
             postElement.innerHTML = `
-                <h2>${post.title.rendered}</h2>
-                <img src="${post.jetpack_featured_media_url}" alt="${post.title.rendered}">
+                <a href="specificblog.html?id=${post.id}" class="post-link">
+                    <h2>${post.title.rendered}</h2>
+                    <img src="${post.jetpack_featured_media_url}" alt="${post.title.rendered}">
+                </a>
             `;
+
+            // Legger til postElement til postsContainer
             postsContainer.appendChild(postElement);
         });
     }
 
-   // Funksjon for å opprette navigasjonsknapper
-function createNavigationButtons(container) {
-    const prevButton = document.createElement('button');
-    prevButton.id = 'prevButton';
-    prevButton.textContent = 'Previous';
-    prevButton.addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + groupedPosts.length) % groupedPosts.length;
-        displayPosts(groupedPosts[currentIndex]);
-    });
+    // Funksjon for å opprette navigasjonsknapper
+    function createNavigationButtons() {
+        const prevButton = document.createElement('button');
+        prevButton.id = 'prevButton';
+        prevButton.textContent = 'Previous';
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + groupedPosts.length) % groupedPosts.length;
+            displayPosts(groupedPosts[currentIndex]);
+        });
 
-    const nextButton = document.createElement('button');
-    nextButton.id = 'nextButton';
-    nextButton.textContent = 'Next';
-    nextButton.addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % groupedPosts.length;
-        displayPosts(groupedPosts[currentIndex]);
-    });
+        const nextButton = document.createElement('button');
+        nextButton.id = 'nextButton';
+        nextButton.textContent = 'Next';
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % groupedPosts.length;
+            displayPosts(groupedPosts[currentIndex]);
+        });
 
-    container.appendChild(prevButton);
-    container.appendChild(nextButton);
+        // Legger navigasjonsknappene til postsContainer
+        postsContainer.appendChild(prevButton);
+        postsContainer.appendChild(nextButton);
+    }
 }
-}
+
