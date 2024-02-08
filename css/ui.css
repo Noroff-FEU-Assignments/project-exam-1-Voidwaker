@@ -100,3 +100,34 @@
 
 
 /*------------------------------------*/
+/* spesific blogpost */
+/* Basis stil for bloggpost container */
+#postContainer {
+    max-width: 800px; /* Maks bredde for innholdet */
+    margin: 20px auto; /* Sentrerer containeren og gir litt plass på toppen og bunnen */
+    padding: 20px; /* Plass inni containeren */
+    border: 1px solid #cccccc; /* En enkel ramme rundt innlegget */
+    background-color: #FCDCB4; /* Bakgrunnsfarge for innlegget */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* En lett skygge for dybdeeffekt */
+}
+
+/* Stil for overskriften i bloggposten */
+#postContainer h1 {
+    font-size: 24px; /* Størrelse på overskriften */
+    color: #000; /* Farge på tekst */
+    margin-bottom: 16px; /* Plass under overskriften */
+}
+
+/* Stil for bildet i bloggposten */
+#postContainer img {
+    max-width: 100%; /* Gjør bildet responsivt */
+    height: auto; /* Beholder bildeforholdet */
+    margin-bottom: 16px; /* Plass under bildet */
+}
+
+/* Stil for tekstinnholdet */
+#postContainer div {
+    font-size: 16px; /* Størrelse på tekst */
+    color: #000; /* Farge på tekst */
+    line-height: 1.6; /* Linjehøyde for bedre lesbarhet */
+}

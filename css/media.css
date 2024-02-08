@@ -1,0 +1,41 @@
+/* blogg specific media queries */
+@media (max-width: 600px) {
+    #postContainer {
+        padding: 10px; /* Mindre padding på mindre skjermer */
+    }
+
+    #postContainer h1 {
+        font-size: 20px; /* Mindre tekststørrelse på overskriften for mindre skjermer */
+    }
+}
+
+@media (max-width: 300px) {
+    #postContainer {
+        padding: 5px; /* Enda mindre padding for veldig små skjermer */
+    }
+
+    #postContainer h1 {
+        font-size: 18px; /* Tilpasser tekststørrelsen ytterligere for veldig små skjermer */
+    }
+}
+
+/*____________________________________*/
+
+/*header*/
+
+/*____________________________________*/
+
+/*homepage*/
+/*____________________________________*/
+
+/*footer*/
+/*____________________________________*/
+
+/*about*/
+/*____________________________________*/
+
+/*contact*/
+/*____________________________________*/
+
+/* allblogg posts*/
+/*____________________________________*/
