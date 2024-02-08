@@ -19,21 +19,18 @@ function fetchAndDisplayPost() {
             return response.json();
         })
         .then(post => {
-            // Sørg for at elementet med ID 'postContainer' eksisterer i HTML
             const postContainer = document.getElementById('postContainer');
-            if(postContainer) {
+            if (postContainer) {
+                // Anta at du ikke legger til <img> taggen manuelt her hvis den allerede er inkludert i post.content.rendered
                 postContainer.innerHTML = `
                     <h1>${post.title.rendered}</h1>
-                    <img src="${post.jetpack_featured_media_url}" alt="${post.title.rendered}">
                     <div>${post.content.rendered}</div>
                 `;
             } else {
                 console.error('Post container not found');
             }
         })
-        .catch(error => {
-            console.error('Error fetching specific post:', error);
-        });
+        
 }
 
 
