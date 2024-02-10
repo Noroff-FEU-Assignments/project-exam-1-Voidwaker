@@ -111,3 +111,16 @@
     filter: brightness(1.1); /* Gjør bildet litt lysere */
 }
 
+
+
+
+/*about page*/
+.about-page-content {
+    background-color: #FCDCB4;
+    margin-top: 50px;
+}
+
+.about-page-content h1 {
+    text-align: center;
+    margin: 20px 0;
+}
