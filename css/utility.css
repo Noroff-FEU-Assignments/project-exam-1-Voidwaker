@@ -124,3 +124,15 @@
     text-align: center;
     margin: 20px 0;
 }
+
+.about-page-content p {
+    margin: 20px;
+
+}
+
+.text-box {
+    border: 2px solid black; /* Legger til en svart ramme */
+    padding: 10px; /* Gir litt plass mellom teksten og rammen */
+    margin: 10px 0; /* Valgfritt: gir litt plass over og under boksen */
+    box-sizing: border-box; /* Inkluderer padding og border i elementets totale bredde/høyde */
+}
