@@ -96,8 +96,8 @@
 }
 
 /* #blogPostsContainer a:hover, #blogPostsContainer a:focus, #blogPostsContainer a:active {
-    color: darkgray; /* Lysere farge for hover, focus og active tilstander */
-    text-decoration: underline; /* Valgfritt: legger til understrek for å indikere interaktivitet */
+    color: darkgray; 
+    text-decoration: underline; 
 } */
 
 .post img {
