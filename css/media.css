@@ -26,6 +26,22 @@
 /*____________________________________*/
 
 /*homepage*/
+@media (max-width: 600px) {
+    #postsContainer {
+        padding: 10px;
+        margin: 10px;
+    }
+
+    #prevButton, #nextButton {
+        padding: 5px 10px;
+    }
+}
+
+@media (max-width: 300px) {
+    .post h2 {
+        font-size: 16px;
+    }
+}
 /*____________________________________*/
 
 /*footer*/

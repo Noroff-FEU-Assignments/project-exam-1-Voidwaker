@@ -56,46 +56,54 @@
 #postsContainer {
     position: relative;
     width: 100%;
-  }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box; /* Sikrer at padding er inkludert i bredden */
+}
 
 .post {
-    display: inline-block;
-    width: calc(25% - 20px); /* Juster bredden etter behov */
-    margin: 0 10px;
-  }
-  .post h2 {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-.post img {
-    width: 100%;
-    height: auto;
+    width: 100%; /* Bruker full bredde for å vise én post om gangen */
+    margin: 0 auto; /* Sentrerer posten */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Valgfritt: Legger til skygge for dybde */
+    border-radius: 8px; /* Valgfritt: Avrundede hjørner */
+    overflow: hidden; /* Sikrer at alt innhold passer innenfor de avrundede hjørnene */
 }
+
+.post h2 {
+    font-size: 24px; /* Øker størrelsen for å passe bedre med enkeltpost-visning */
+    margin: 20px 0; /* Gir mer plass rundt overskriften */
+}
+
+.post img {
+    width: 50%; /* Sikrer at bildet fyller bredden av posten */
+    height: auto; /* Beholder bildets originale aspektforhold */
+    border-radius: 0; /* Fjerner avrundede hjørner fra bildet siden post-containeren allerede har det */
+}
+
 .carousel {
-    position: relative; /* Posisjon relatert til foreldrelementet */
-    border: 2px solid black;
+    position: relative;
     background-color: #FCDCB4;
     padding: 20px;
-    height: 100vh;
+    height: auto; /* Justerer høyden til å være auto for å passe innholdet */
+    border: 2px solid black;
+    margin: 20px 0; /* Gir plass rundt karusellen */
 }
 
-.prev-button,
-.next-button {
-    position: absolute; /* Posisjon absolutt i forhold til karusellen */
-    top: 50%; /* Plasser vertikalt midt i forhold til karusellens høyde */
-    transform: translateY(-50%); /* Juster plasseringen for å sentrere vertikalt */
-    background: none; /* Fjern bakgrunnsfarge */
-    border: none; /* Fjern ramme */
-    cursor: pointer; /* Endre markøren til en pil */
-    z-index: 1; /* Sørg for at knappene alltid er over karusellen */
+#prevButton, #nextButton {
+    position: absolute; /* Posisjonerer knappene absolutt i forhold til karusellen */
+    top: 50%; /* Plasserer knappene vertikalt i midten */
+    transform: translateY(-50%); /* Justerer plasseringen slik at de er nøyaktig i midten */
 }
 
-.prev-button {
-    left: 0; /* Plasser til venstre for karusellen */
+#prevButton {
+    left: 10px; /* Plasser til venstre for karusellen */
 }
 
-.next-button {
-    right: 0; /* Plasser til høyre for karusellen */
+#nextButton {
+    right: 10px; /* Plasser til høyre for karusellen */
 }
 
 
