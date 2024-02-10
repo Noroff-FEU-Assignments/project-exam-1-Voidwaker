@@ -48,3 +48,43 @@
     display: block;
 }
 /*------------------------------------*/
+
+/* all blogposts*/
+#blogPostsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Fordeler innlegg jevnt med plass rundt dem */
+    padding: 20px;
+    margin: 20px auto; /* Sentrerer containeren på siden */
+    border: 3px solid #000; /* Ramme rundt hele settet med en distinkt farge */
+    background-color: #FCDCB4; /* Bakgrunnsfarge for hele containeren */
+    max-width: 1200px; /* Maks bredde på containeren */
+}
+
+.post {
+    width: calc(33.333% - 40px); /* Trekker fra margin på begge sider */
+    margin: 20px; /* Gir plass mellom innleggene */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Valgfritt: Legger til en lett skygge for dybde */
+    background-color: #ffffff; /* Bakgrunnsfarge for hvert innlegg */
+    border-radius: 8px; /* Avrundede hjørner på hvert innlegg */
+    overflow: hidden; /* Sikrer at alt innhold, som bilder, er innefor de avrundede hjørnene */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Sentrerer innholdet i hvert innlegg */
+}
+
+.post img {
+    width: 100%; /* Gjør at bildet tar opp hele bredden av sitt innlegg */
+    height: auto; /* Beholder bildets aspektforhold */
+    border-top-left-radius: 8px; /* Avrundede hjørner på toppen av bildet */
+    border-top-right-radius: 8px;
+}
+
+.post h2 {
+    padding: 10px 20px; /* Plass inni hvert innlegg rundt overskriften */
+}
+
+.post p {
+    padding: 0 20px 20px; /* Plass rundt paragrafen, mer på bunnen */
+    text-align: justify; /* Justerer tekst for bedre lesbarhet */
+}
