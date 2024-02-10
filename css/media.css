@@ -26,6 +26,13 @@
 /*____________________________________*/
 
 /*homepage*/
+@media (max-width: 768px) {
+    .post img {
+        width: 90%; /* Gir litt mer plass rundt bildene på mindre skjermer */
+        object-fit: contain;
+    }
+}
+
 @media (max-width: 600px) {
     #postsContainer {
         padding: 10px;

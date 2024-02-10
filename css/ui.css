@@ -56,6 +56,7 @@
 #postsContainer {
     position: relative;
     width: 100%;
+    height: 400px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -65,7 +66,7 @@
 }
 
 .post {
-    width: 100%; /* Bruker full bredde for å vise én post om gangen */
+    width: 50%; /* Bruker full bredde for å vise én post om gangen */
     margin: 0 auto; /* Sentrerer posten */
     box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Valgfritt: Legger til skygge for dybde */
     border-radius: 8px; /* Valgfritt: Avrundede hjørner */
@@ -77,35 +78,81 @@
     margin: 20px 0; /* Gir mer plass rundt overskriften */
 }
 
-.post img {
-    width: 50%; /* Sikrer at bildet fyller bredden av posten */
-    height: auto; /* Beholder bildets originale aspektforhold */
-    border-radius: 0; /* Fjerner avrundede hjørner fra bildet siden post-containeren allerede har det */
-}
-
 .carousel {
     position: relative;
     background-color: #FCDCB4;
     padding: 20px;
-    height: auto; /* Justerer høyden til å være auto for å passe innholdet */
+    max-width: 600px; /* Eller hvilken bredde du foretrekker */
+    margin: 20px auto; /* Sentrerer karusellen */
     border: 2px solid black;
-    margin: 20px 0; /* Gir plass rundt karusellen */
+    overflow: hidden; /* Holder alt innhold innenfor karusellens grenser */
 }
 
+#postsContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.post img {
+    width: 100%; /* Fyller bredden av sin container */
+    height: auto; /* Beholder aspektforholdet */
+    object-fit: contain; /* Sikrer at hele bildet vises, kan justeres til 'cover' for å fylle arealet */
+    border-radius: 8px; /* Beholder avrundede hjørner hvis ønskelig */
+}
+
+.post {
+    margin: 0 auto; /* Sentrerer posten */
+    text-align: center;
+}
+
+/* Stilsett for knappene, inkludert absolutt posisjonering inne i .carousel */
 #prevButton, #nextButton {
-    position: absolute; /* Posisjonerer knappene absolutt i forhold til karusellen */
-    top: 50%; /* Plasserer knappene vertikalt i midten */
-    transform: translateY(-50%); /* Justerer plasseringen slik at de er nøyaktig i midten */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    /* Andre stilsett som tidligere definert */
+}
+.carousel, .post {
+    padding: 20px; /* Juster ned fra 20px om nødvendig */
 }
 
 #prevButton {
-    left: 10px; /* Plasser til venstre for karusellen */
+    left: 10px;
 }
 
 #nextButton {
-    right: 10px; /* Plasser til høyre for karusellen */
+    right: 10px;
 }
 
+
+.post {
+    margin: 0 auto; /* Sentrerer posten */
+    text-align: center;
+}
+
+/* Stilsett for knappene, inkludert absolutt posisjonering inne i .carousel */
+#prevButton, #nextButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    /* Andre stilsett som tidligere definert */
+}
+
+#prevButton {
+    left: 10px;
+}
+
+#nextButton {
+    right: 10px;
+}
+
+.border-carousel{
+    background-color: #FCDCB4;
+    margin-top: 50px;
+    padding: 50px;
+    margin-bottom: 50px;
+}
 
 /*------------------------------------*/
 /* spesific blogpost */
@@ -138,4 +185,11 @@
     font-size: 16px; /* Størrelse på tekst */
     color: #000; /* Farge på tekst */
     line-height: 1.6; /* Linjehøyde for bedre lesbarhet */
+}
+
+
+
+/* homepage information*/
+.homepage-info {
+    background-color: #FCDCB4;
 }
