@@ -53,38 +53,61 @@
 #blogPostsContainer {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around; /* Fordeler innlegg jevnt med plass rundt dem */
+    justify-content: space-between; /* Endret fra space-around for jevn distribusjon */
     padding: 20px;
-    margin: 20px auto; /* Sentrerer containeren på siden */
-    border: 3px solid #000; /* Ramme rundt hele settet med en distinkt farge */
-    background-color: #FCDCB4; /* Bakgrunnsfarge for hele containeren */
-    max-width: 1200px; /* Maks bredde på containeren */
+    margin: 20px auto;
+    border: 3px solid #000;
+    background-color: #FCDCB4;
+    max-width: 1200px; /* Juster denne bredden etter behov */
+    gap: 20px; /* Gir plass mellom innlegg */
 }
 
 .post {
-    width: calc(33.333% - 40px); /* Trekker fra margin på begge sider */
-    margin: 20px; /* Gir plass mellom innleggene */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Valgfritt: Legger til en lett skygge for dybde */
-    background-color: #ffffff; /* Bakgrunnsfarge for hvert innlegg */
-    border-radius: 8px; /* Avrundede hjørner på hvert innlegg */
-    overflow: hidden; /* Sikrer at alt innhold, som bilder, er innefor de avrundede hjørnene */
+    flex: 1 1 calc(33.333% - 40px); /* Justert til å bruke flex-grow, flex-shrink og flex-basis */
+    margin: 10px; /* Mindre margin for å passe tre innlegg per rad */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Sentrerer innholdet i hvert innlegg */
+    align-items: center;
 }
 
 .post img {
-    width: 100%; /* Gjør at bildet tar opp hele bredden av sitt innlegg */
-    height: auto; /* Beholder bildets aspektforhold */
-    border-top-left-radius: 8px; /* Avrundede hjørner på toppen av bildet */
-    border-top-right-radius: 8px;
+    width: 100%;
+    height: auto;
 }
 
-.post h2 {
-    padding: 10px 20px; /* Plass inni hvert innlegg rundt overskriften */
+/* Sørg for at View More-knappen er synlig */
+#viewAllButton {
+    display: block; /* Endret fra none til block for å sikre at den er synlig */
+    padding: 10px 20px;
+    margin: 20px auto;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#blogPostsContainer a, #blogPostsContainer a:visited { /* Stiler for lenker og besøkte lenker */
+    color: black; /* Endrer tekstfargen til svart */
+    text-decoration: none; /* Fjerner understreken */
 }
 
-.post p {
-    padding: 0 20px 20px; /* Plass rundt paragrafen, mer på bunnen */
-    text-align: justify; /* Justerer tekst for bedre lesbarhet */
+/* #blogPostsContainer a:hover, #blogPostsContainer a:focus, #blogPostsContainer a:active {
+    color: darkgray; /* Lysere farge for hover, focus og active tilstander */
+    text-decoration: underline; /* Valgfritt: legger til understrek for å indikere interaktivitet */
+} */
+
+.post img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease, filter 0.3s ease; /* Glatte overganger for zoom og lysstyrke */
 }
+
+.post img:hover {
+    transform: scale(1.05); /* Zoomer bildet litt */
+    filter: brightness(1.1); /* Gjør bildet litt lysere */
+}
+
