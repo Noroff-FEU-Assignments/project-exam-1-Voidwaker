@@ -51,13 +51,56 @@
 }
 /*____________________________________*/
 
-/*footer*/
-/*____________________________________*/
+
 
 /*about*/
 /*____________________________________*/
 
 /*contact*/
+/* Basisstilsett som du allerede har */
+
+/* Responsive tilpasninger for skjermer mindre enn 600px */
+@media (max-width: 600px) {
+    .contact-form {
+        padding: 15px;
+        margin: 10px;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group textarea {
+        padding: 8px;
+    }
+
+    button {
+        padding: 8px 16px;
+    }
+}
+
+/* Tilpasninger for veldig små skjermer, ned til 380px */
+@media (max-width: 380px) {
+    .contact-form {
+        margin: 5px;
+        padding: 10px;
+    }
+
+    .form-group label {
+        margin-bottom: 2px;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group textarea,
+    button {
+        font-size: 14px; /* Reduserer skriftstørrelsen for å passe bedre på små skjermer */
+    }
+
+    button {
+        width: 100%; /* Gjør knappen bredere for lettere tilgjengelighet */
+        padding: 10px 0; /* Øker padding for bedre klikkbarhet */
+    }
+}
+
 /*____________________________________*/
 
 /* allblogg posts*/
