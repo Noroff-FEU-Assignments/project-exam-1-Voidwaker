@@ -51,19 +51,18 @@ function setupNavigationButtons(posts) {
     navigationContainer.appendChild(nextButton);
 }
 
-function changePost(direction) {
-    clearInterval(autoRotateInterval); // Stopper automatisk rotasjon ved manuell navigasjon
-    currentIndex = (currentIndex + direction + postsData.length) % postsData.length;
-    displayPost(postsData[currentIndex]);
-    startAutoRotate(); // Restarter automatisk rotasjon
+function changePost(direction, posts) {
+    clearInterval(autoRotateInterval); 
+    currentIndex = (currentIndex + direction + posts.length) % posts.length;
+    displayPost(posts[currentIndex]);
+    startAutoRotate(posts); 
 }
 
-function startAutoRotate() {
+function startAutoRotate(posts) {
     autoRotateInterval = setInterval(() => {
-        currentIndex = (currentIndex + 1) % postsData.length;
-        displayPost(postsData[currentIndex]);
+        currentIndex = (currentIndex + 1) % posts.length;
+        displayPost(posts[currentIndex]);
     }, rotationDelay);
 }
-
 
 
