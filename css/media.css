@@ -22,3 +22,50 @@
         font-size: 14px;
     }
 }
+
+
+/* media for navigation for mobile  i karusellen*/
+@media (max-width: 768px) {
+    #navigationContainer {
+        gap: 300px; 
+    }
+}
+
+/* Tilpasser for skjermer mindre enn 600px */
+@media (max-width: 600px) {
+    #navigationContainer {
+        gap: 200px; 
+    }
+}
+
+/* Tilpasser for skjermer mindre enn 400px */
+@media (max-width: 400px) {
+    #navigationContainer {
+        gap: 100px; 
+    }
+}
+
+/* Tilpasser for skjermer ned til 300px */
+@media (max-width: 300px) {
+    #navigationContainer {
+        bottom: 60%; 
+        gap: 50px; 
+    }
+}
+@media (max-width: 300px) {
+    #prevButton, #nextButton {
+        width: 24px; 
+        height: 24px;
+        font-size: 16px; 
+    }
+}
+
+@media (max-width: 720px) {
+    #navigationContainer {
+        gap: 100px; /* Justerer gapet til en verdi som passer for mindre skjermer */
+        left: 50%;
+        transform: translate(-50%, -50%);
+        bottom: auto;
+        top: 50%; /* Plasserer navigasjonscontaineren mer sentrert */
+    }
+}
