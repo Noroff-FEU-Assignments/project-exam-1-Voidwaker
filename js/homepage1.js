@@ -1,10 +1,10 @@
 let currentIndex = 0;
 let autoRotateInterval;
-const rotationDelay = 10000; // 10 sekunder
+let postsData = []; 
+const rotationDelay = 10000; // 10 sekunder for automatisk rotasjon
 
 document.addEventListener('DOMContentLoaded', () => {
     fetchBlogPosts();
-    setupNavigationButtons();
 });
 
 function fetchBlogPosts() {
@@ -12,8 +12,11 @@ function fetchBlogPosts() {
     fetch(blogPostsURL)
         .then(response => response.json())
         .then(posts => {
-            displayPost(posts[currentIndex]);
-            startAutoRotate(posts);
+            if (posts.length > 0) {
+                displayPost(posts[currentIndex]);
+                setupNavigationButtons(posts);
+                startAutoRotate(posts);
+            }
         })
         .catch(error => console.error('Error fetching blog posts:', error));
 }
@@ -28,36 +31,39 @@ function displayPost(post) {
     `;
 }
 
-function setupNavigationButtons() {
-    const navigationContainer = document.getElementById('navigationContainer');
-    navigationContainer.innerHTML = ''; // Tømmer eksisterende innhold
+function setupNavigationButtons(posts) {
+    const navigationContainer = document.getElementById('navigationContainer'); // Sørg for at dette elementet finnes i HTML
+    navigationContainer.innerHTML = ''; // Tømmer tidligere navigasjonsknapper hvis de eksisterer
 
     const prevButton = document.createElement('button');
-    prevButton.innerHTML = '&#10094;'; // HTML-entitet for venstre pil
-    prevButton.onclick = () => changePost(-1);
+    prevButton.innerHTML = '&#10094;'; // Venstre pil
+    prevButton.addEventListener('click', () => {
+        changePost(-1, posts);
+    });
 
     const nextButton = document.createElement('button');
-    nextButton.innerHTML = '&#10095;'; // HTML-entitet for høyre pil
-    nextButton.onclick = () => changePost(1);
+    nextButton.innerHTML = '&#10095;'; // Høyre pil
+    nextButton.addEventListener('click', () => {
+        changePost(1, posts);
+    });
 
     navigationContainer.appendChild(prevButton);
     navigationContainer.appendChild(nextButton);
 }
 
-
-function changePost(direction, posts) {
-    clearInterval(autoRotateInterval); // Stopper automatisk rotasjon
-    currentIndex = (currentIndex + direction + posts.length) % posts.length;
-    displayPost(posts[currentIndex]); // Oppdaterer direkte basert på ny currentIndex
-    startAutoRotate(posts); // Gjenstarter den automatiske rotasjonen
+function changePost(direction) {
+    clearInterval(autoRotateInterval); // Stopper automatisk rotasjon ved manuell navigasjon
+    currentIndex = (currentIndex + direction + postsData.length) % postsData.length;
+    displayPost(postsData[currentIndex]);
+    startAutoRotate(); // Restarter automatisk rotasjon
 }
 
-
-function startAutoRotate(posts) {
+function startAutoRotate() {
     autoRotateInterval = setInterval(() => {
-        currentIndex = (currentIndex + 1) % posts.length;
-        displayPost(posts[currentIndex]); // Passer det aktuelle post-objektet basert på currentIndex
+        currentIndex = (currentIndex + 1) % postsData.length;
+        displayPost(postsData[currentIndex]);
     }, rotationDelay);
 }
+
 
 
