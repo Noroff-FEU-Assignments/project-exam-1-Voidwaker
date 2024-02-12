@@ -30,24 +30,6 @@
 
 /*------------------------------------*/
 
-/* footer */ 
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-}
-
-.footer-section {
-   flex: 1;
-}
-.social-media ul {
-    display: flex;
-    justify-content: center;
-}
-
-.social-media li a{
-    display: block;
-}
-/*------------------------------------*/
 
 /* all blogposts*/
 #blogPostsContainer {
@@ -79,7 +61,7 @@
     height: auto;
 }
 
-/* Sørg for at View More-knappen er synlig */
+
 #viewAllButton {
     display: block; /* Endret fra none til block for å sikre at den er synlig */
     padding: 10px 20px;
@@ -95,10 +77,7 @@
     text-decoration: none; /* Fjerner understreken */
 }
 
-/* #blogPostsContainer a:hover, #blogPostsContainer a:focus, #blogPostsContainer a:active {
-    color: darkgray; 
-    text-decoration: underline; 
-} */
+
 
 .post img {
     width: 100%;
