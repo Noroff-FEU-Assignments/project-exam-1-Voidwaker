@@ -1,107 +1,24 @@
-/* blogg specific media queries */
-@media (max-width: 600px) {
-    #postContainer {
-        padding: 10px; /* Mindre padding på mindre skjermer */
-    }
-
-    #postContainer h1 {
-        font-size: 20px; /* Mindre tekststørrelse på overskriften for mindre skjermer */
-    }
-}
-
-@media (max-width: 300px) {
-    #postContainer {
-        padding: 5px; /* Enda mindre padding for veldig små skjermer */
-    }
-
-    #postContainer h1 {
-        font-size: 18px; /* Tilpasser tekststørrelsen ytterligere for veldig små skjermer */
-    }
-}
-
-/*____________________________________*/
-
-/*header*/
-
-/*____________________________________*/
-
-/*homepage*/
 @media (max-width: 768px) {
     .post img {
-        width: 90%; /* Gir litt mer plass rundt bildene på mindre skjermer */
+        width: 90%;
         object-fit: contain;
     }
 }
 
 @media (max-width: 600px) {
-    #postsContainer {
-        padding: 10px;
-        margin: 10px;
-    }
-
-    #prevButton, #nextButton {
-        padding: 5px 10px;
-    }
-}
-
-@media (max-width: 300px) {
-    .post h2 {
-        font-size: 16px;
-    }
-}
-/*____________________________________*/
-
-
-
-/*about*/
-/*____________________________________*/
-
-/*contact*/
-/* Basisstilsett som du allerede har */
-
-/* Responsive tilpasninger for skjermer mindre enn 600px */
-@media (max-width: 600px) {
-    .contact-form {
+    .primary-header, .footer-container, #postsContainer, .contact-form {
         padding: 15px;
         margin: 10px;
     }
 
-    .form-group input[type="text"],
-    .form-group input[type="email"],
-    .form-group textarea {
-        padding: 8px;
-    }
-
-    button {
-        padding: 8px 16px;
-    }
-}
-
-/* Tilpasninger for veldig små skjermer, ned til 380px */
-@media (max-width: 380px) {
-    .contact-form {
-        margin: 5px;
+    #postContainer, .contact-form {
         padding: 10px;
-    }
-
-    .form-group label {
-        margin-bottom: 2px;
-    }
-
-    .form-group input[type="text"],
-    .form-group input[type="email"],
-    .form-group textarea,
-    button {
-        font-size: 14px; /* Reduserer skriftstørrelsen for å passe bedre på små skjermer */
-    }
-
-    button {
-        width: 100%; /* Gjør knappen bredere for lettere tilgjengelighet */
-        padding: 10px 0; /* Øker padding for bedre klikkbarhet */
+        margin: 10px;
     }
 }
 
-/*____________________________________*/
-
-/* allblogg posts*/
-/*____________________________________*/
+@media (max-width: 380px) {
+    .primary-header a, .footer-section li, .post h2, .about-page-content h1, .about-page-content p, .text-box {
+        font-size: 14px;
+    }
+}

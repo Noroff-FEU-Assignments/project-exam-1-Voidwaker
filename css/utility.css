@@ -136,3 +136,33 @@
     margin: 10px 0; /* Valgfritt: gir litt plass over og under boksen */
     box-sizing: border-box; /* Inkluderer padding og border i elementets totale bredde/høyde */
 }
+
+.about-content {
+    display: flex;
+    background-color: #FCDCB4;
+    margin-top: 50px;
+    border: 2px solid black;
+    flex-direction: column;
+}
+
+.about-content h2 {
+    text-align: center;
+    margin: 20px 0;
+}
+.about-content img {
+    width: 50%;
+    height: auto;
+    margin: 20px;
+    align-self: center
+}
+
+.about-content p {
+    margin: 20px;
+    color: black;
+
+}
+
+.about-content img:hover {
+    transform: scale(1.05); /* Zoomer bildet litt */
+    filter: brightness(1.1); /* Gjør bildet litt lysere */
+}
