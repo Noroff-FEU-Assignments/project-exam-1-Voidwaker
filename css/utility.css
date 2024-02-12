@@ -35,18 +35,18 @@
 #blogPostsContainer {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between; /* Endret fra space-around for jevn distribusjon */
+    justify-content: space-between; 
     padding: 20px;
     margin: 20px auto;
     border: 3px solid #000;
     background-color: #FCDCB4;
-    max-width: 1200px; /* Juster denne bredden etter behov */
-    gap: 20px; /* Gir plass mellom innlegg */
+    max-width: 1200px; 
+    gap: 20px; 
 }
 
 .post {
-    flex: 1 1 calc(33.333% - 40px); /* Justert til å bruke flex-grow, flex-shrink og flex-basis */
-    margin: 10px; /* Mindre margin for å passe tre innlegg per rad */
+    flex: 1 1 calc(33.333% - 40px); 
+    margin: 10px; 
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     background-color: #ffffff;
     border-radius: 8px;
@@ -63,7 +63,7 @@
 
 
 #viewAllButton {
-    display: block; /* Endret fra none til block for å sikre at den er synlig */
+    display: block; 
     padding: 10px 20px;
     margin: 20px auto;
     background-color: #007bff;
@@ -72,9 +72,9 @@
     border-radius: 5px;
     cursor: pointer;
 }
-#blogPostsContainer a, #blogPostsContainer a:visited { /* Stiler for lenker og besøkte lenker */
-    color: black; /* Endrer tekstfargen til svart */
-    text-decoration: none; /* Fjerner understreken */
+#blogPostsContainer a, #blogPostsContainer a:visited { 
+    color: black; 
+    text-decoration: none;  
 }
 
 
@@ -82,12 +82,12 @@
 .post img {
     width: 100%;
     height: auto;
-    transition: transform 0.3s ease, filter 0.3s ease; /* Glatte overganger for zoom og lysstyrke */
+    transition: transform 0.3s ease, filter 0.3s ease; 
 }
 
 .post img:hover {
-    transform: scale(1.05); /* Zoomer bildet litt */
-    filter: brightness(1.1); /* Gjør bildet litt lysere */
+    transform: scale(1.05); 
+    filter: brightness(1.1); 
 }
 
 
@@ -110,10 +110,10 @@
 }
 
 .text-box {
-    border: 2px solid black; /* Legger til en svart ramme */
-    padding: 10px; /* Gir litt plass mellom teksten og rammen */
-    margin: 10px 0; /* Valgfritt: gir litt plass over og under boksen */
-    box-sizing: border-box; /* Inkluderer padding og border i elementets totale bredde/høyde */
+    border: 2px solid black; 
+    padding: 10px; 
+    margin: 10px 0; 
+    box-sizing: border-box; 
 }
 
 .about-content {
@@ -142,6 +142,6 @@
 }
 
 .about-content img:hover {
-    transform: scale(1.05); /* Zoomer bildet litt */
-    filter: brightness(1.1); /* Gjør bildet litt lysere */
+    transform: scale(1.05); 
+    filter: brightness(1.1); 
 }
