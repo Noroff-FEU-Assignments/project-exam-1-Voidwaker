@@ -1,5 +1,6 @@
-// Global variabel for å holde styr på gjeldende indeks
 let currentIndex = 0;
+let autoRotateInterval;
+const rotationDelay = 5000; // 5 sekunder for hvert bilde
 
 document.addEventListener('DOMContentLoaded', () => {
     fetchBlogPosts();
@@ -11,6 +12,7 @@ function fetchBlogPosts() {
         .then(response => response.json())
         .then(posts => {
             initializeCarousel(posts);
+            startAutoRotate(posts);
         })
         .catch(error => console.error('Error fetching blog posts:', error));
 }
@@ -18,6 +20,7 @@ function fetchBlogPosts() {
 function initializeCarousel(posts) {
     displayPost(posts[currentIndex]);
     updateNavigationButtons(posts);
+    setupAutoRotate(posts);
 }
 
 function displayPost(post) {
@@ -41,6 +44,7 @@ function updateNavigationButtons(posts) {
     prevButton.onclick = () => {
         currentIndex = (currentIndex - 1 + posts.length) % posts.length;
         initializeCarousel(posts);
+        resetAutoRotate(posts);
     };
 
     const nextButton = document.createElement('button');
@@ -49,15 +53,35 @@ function updateNavigationButtons(posts) {
     nextButton.onclick = () => {
         currentIndex = (currentIndex + 1) % posts.length;
         initializeCarousel(posts);
+        resetAutoRotate(posts);
     };
 
     postsContainer.appendChild(prevButton);
     postsContainer.appendChild(nextButton);
 }
 
-function displayPosts(posts, currentIndex) {
-    // Siden vi nå viser ett innlegg om gangen, har vi endret til displayPost
-    // og denne funksjonen er ikke lenger nødvendig
+function startAutoRotate(posts) {
+    autoRotateInterval = setInterval(() => {
+        currentIndex = (currentIndex + 1) % posts.length;
+        displayPost(posts[currentIndex]);
+    }, rotationDelay);
+}
+
+function setupAutoRotate(posts) {
+    // Stopper automatisk rotasjon ved brukerinteraksjon
+    document.getElementById('postsContainer').addEventListener('mouseenter', () => {
+        clearInterval(autoRotateInterval);
+    });
+
+    // Gjenopptar automatisk rotasjon når brukeren ikke lenger interagerer
+    document.getElementById('postsContainer').addEventListener('mouseleave', () => {
+        startAutoRotate(posts);
+    });
+}
+
+function resetAutoRotate(posts) {
+    clearInterval(autoRotateInterval);
+    startAutoRotate(posts);
 }
 
 

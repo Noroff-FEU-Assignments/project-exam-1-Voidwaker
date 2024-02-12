@@ -21,33 +21,7 @@
 
 /*------------------------------------*/
 
-/* footer */
-.footer-container {
-    padding: 20px;
-    height: 50px;
-    border-bottom: 1px solid #e5e5e5;
-}
 
-.footer-section li{
-    height: 60px;
-
-}
-
-.social-media li {
-    margin: 0 10px;
- }
- .social-media li a {
-     height: 50px;
- }
- 
- .social-meida img {
-     height: 100px;
-     width: auto;
- }
- .social-media ul {
-    padding: 0;
- }
-/*------------------------------------*/
 
 
 /* homepage carousell */
@@ -192,6 +166,12 @@
 /* homepage information*/
 .homepage-info {
     background-color: #FCDCB4;
+}
+
+.border-carousel h1 {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 64px;
 }
 
 
