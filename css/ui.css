@@ -251,3 +251,21 @@ button {
 button:hover {
     background-color: #0056b3;
 }
+
+
+/* Basisstiler for blogginnlegget */
+#postContainer {
+    max-width: 800px; 
+    margin: 50px auto; 
+    padding: 20px; 
+}
+
+#postContainer h1, #postContainer p {
+    margin: 20px 0; 
+    
+}
+
+#postContainer img {
+    max-width: 100%; 
+    height: auto; 
+}

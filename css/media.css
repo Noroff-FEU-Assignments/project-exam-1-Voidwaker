@@ -62,10 +62,41 @@
 
 @media (max-width: 720px) {
     #navigationContainer {
-        gap: 100px; /* Justerer gapet til en verdi som passer for mindre skjermer */
         left: 50%;
         transform: translate(-50%, -50%);
-        bottom: auto;
-        top: 50%; /* Plasserer navigasjonscontaineren mer sentrert */
+        bottom: 50%; 
+        top: 50%; 
+    }
+}
+
+#navigationContainer {
+    z-index: 10;
+}
+
+
+
+/* spesific blogpost */
+@media (max-width: 600px) {
+    #postContainer {
+        padding: 10px;
+    }
+
+    #postContainer h1 {
+        font-size: 20px; 
+    }
+
+    #postContainer p {
+        font-size: 16px; 
+    }
+}
+
+/* Tilpasser for veldig små skjermer (ned til 300px) */
+@media (max-width: 300px) {
+    #postContainer h1 {
+        font-size: 18px; 
+    }
+
+    #postContainer p {
+        font-size: 14px; 
     }
 }
