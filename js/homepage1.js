@@ -1,24 +1,38 @@
 let currentIndex = 0;
 let autoRotateInterval;
-let postsData = []; 
+let postsData = []; // Holder på innleggsdataene
 const rotationDelay = 10000; // 10 sekunder for automatisk rotasjon
 
 document.addEventListener('DOMContentLoaded', () => {
     fetchBlogPosts();
 });
 
+function showLoader() {
+    document.getElementById('loader').style.display = 'block';
+}
+
+function hideLoader() {
+    document.getElementById('loader').style.display = 'none';
+}
+
 function fetchBlogPosts() {
+    showLoader();
     const blogPostsURL = 'https://bollingvaaler.no/wp-json/wp/v2/posts';
     fetch(blogPostsURL)
         .then(response => response.json())
         .then(posts => {
+            postsData = posts; // Lagrer innleggene globalt
             if (posts.length > 0) {
                 displayPost(posts[currentIndex]);
-                setupNavigationButtons(posts);
-                startAutoRotate(posts);
+                setupNavigationButtons();
+                startAutoRotate();
             }
+            hideLoader();
         })
-        .catch(error => console.error('Error fetching blog posts:', error));
+        .catch(error => {
+            console.error('Error fetching blog posts:', error);
+            hideLoader();
+        });
 }
 
 function displayPost(post) {
@@ -31,38 +45,35 @@ function displayPost(post) {
     `;
 }
 
-function setupNavigationButtons(posts) {
-    const navigationContainer = document.getElementById('navigationContainer'); // Sørg for at dette elementet finnes i HTML
-    navigationContainer.innerHTML = ''; // Tømmer tidligere navigasjonsknapper hvis de eksisterer
+function setupNavigationButtons() {
+    const navigationContainer = document.getElementById('navigationContainer');
+    navigationContainer.innerHTML = ''; // Tømmer tidligere navigasjonsknapper
 
     const prevButton = document.createElement('button');
     prevButton.innerHTML = '&#10094;'; // Venstre pil
-    prevButton.addEventListener('click', () => {
-        changePost(-1, posts);
-    });
+    prevButton.addEventListener('click', () => changePost(-1));
 
     const nextButton = document.createElement('button');
     nextButton.innerHTML = '&#10095;'; // Høyre pil
-    nextButton.addEventListener('click', () => {
-        changePost(1, posts);
-    });
+    nextButton.addEventListener('click', () => changePost(1));
 
     navigationContainer.appendChild(prevButton);
     navigationContainer.appendChild(nextButton);
 }
 
-function changePost(direction, posts) {
-    clearInterval(autoRotateInterval); 
-    currentIndex = (currentIndex + direction + posts.length) % posts.length;
-    displayPost(posts[currentIndex]);
-    startAutoRotate(posts); 
+function changePost(direction) {
+    clearInterval(autoRotateInterval);
+    currentIndex = (currentIndex + direction + postsData.length) % postsData.length;
+    displayPost(postsData[currentIndex]);
+    startAutoRotate();
 }
 
-function startAutoRotate(posts) {
+function startAutoRotate() {
     autoRotateInterval = setInterval(() => {
-        currentIndex = (currentIndex + 1) % posts.length;
-        displayPost(posts[currentIndex]);
+        currentIndex = (currentIndex + 1) % postsData.length;
+        displayPost(postsData[currentIndex]);
     }, rotationDelay);
 }
+
 
 

@@ -7,33 +7,44 @@ function fetchBlogPosts() {
     fetch(blogPostsURL)
         .then(response => response.json())
         .then(posts => {
-            // Viser de første 10 innleggene først
+            // Viser de første 8 innleggene først
             displayPosts(posts.slice(0, 8));
 
-            // Sjekker om det er flere enn 10 innlegg
-            if (posts.length > 10) {
+            // Sjekker om det er flere enn 8 innlegg
+            if (posts.length > 8) {
                 const viewAllButton = document.getElementById('viewAllButton');
-                viewAllButton.style.display = 'block'; // Gjør knappen synlig
+                const viewLessButton = document.getElementById('viewLessButton'); 
+                
+                viewAllButton.style.display = 'block'; 
 
                 // Legger til en event listener for "View More"-knappen
                 viewAllButton.addEventListener('click', () => {
-                    displayPosts(posts); // Viser alle innleggene
-                    viewAllButton.style.display = 'none'; // Skjuler knappen
+                    displayPosts(posts); 
+                    viewAllButton.style.display = 'none'; 
+                    viewLessButton.style.display = 'block'; 
+                });
+
+                // Legger til en event listener for "View Less"-knappen
+                viewLessButton.addEventListener('click', () => {
+                    displayPosts(posts.slice(0, 8)); 
+                    viewLessButton.style.display = 'none'; 
+                    viewAllButton.style.display = 'block'; 
                 });
             }
         })
         .catch(error => console.error('Error fetching blog posts:', error));
 }
 
+
 function displayPosts(posts) {
     const postsContainer = document.getElementById('blogPostsContainer');
-    postsContainer.innerHTML = ''; // Tømmer containeren før nye innlegg legges til
+    postsContainer.innerHTML = ''; 
 
     posts.forEach(post => {
         const postElement = document.createElement('div');
-        postElement.className = 'post'; // Setter klassenavn for styling
+        postElement.className = 'post'; 
 
-        // Anta at du har en spesifikk side for hvert innlegg, f.eks. 'blogPost.html'
+        
         // Du kan sende innleggets ID som en URL-parameter
         const postLink = `<a href="specificblog.html?id=${post.id}">`;
 
