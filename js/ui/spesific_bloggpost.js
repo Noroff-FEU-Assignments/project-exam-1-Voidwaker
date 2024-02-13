@@ -21,17 +21,19 @@ function fetchAndDisplayPost() {
         .then(post => {
             const postContainer = document.getElementById('postContainer');
             if (postContainer) {
-                // Anta at du ikke legger til <img> taggen manuelt her hvis den allerede er inkludert i post.content.rendered
                 postContainer.innerHTML = `
                     <h1>${post.title.rendered}</h1>
                     <div>${post.content.rendered}</div>
                 `;
+                
+                document.title = post.title.rendered;
             } else {
                 console.error('Post container not found');
             }
         })
-        
+        .catch(error => console.error('Error fetching specific post:', error));
 }
+
 
 
 document.addEventListener('DOMContentLoaded', fetchAndDisplayPost);
