@@ -8,12 +8,19 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function showLoader() {
-    document.getElementById('loader').style.display = 'block';
+    const loader = document.getElementById('loader');
+    if (loader) {
+        loader.style.display = 'block';
+    }
 }
 
 function hideLoader() {
-    document.getElementById('loader').style.display = 'none';
+    const loader = document.getElementById('loader');
+    if (loader) {
+        loader.style.display = 'none';
+    }
 }
+
 
 function fetchBlogPosts() {
     showLoader();
