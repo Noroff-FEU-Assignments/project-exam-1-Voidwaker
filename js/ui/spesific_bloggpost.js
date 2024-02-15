@@ -25,15 +25,35 @@ function fetchAndDisplayPost() {
                     <h1>${post.title.rendered}</h1>
                     <div>${post.content.rendered}</div>
                 `;
-                
+        
                 document.title = post.title.rendered;
-            } else {
-                console.error('Post container not found');
+        
+                // Aktiverer modal for bilder i innlegget
+                activateImageModal();
             }
-        })
-        .catch(error => console.error('Error fetching specific post:', error));
-}
-
+        });
+        
+        function activateImageModal() {
+            const images = document.querySelectorAll('#postContainer img');
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImg');
+            const caption = document.getElementById('caption');
+            const closeModal = document.querySelector('.modal .close');
+        
+            images.forEach(image => {
+                image.addEventListener('click', () => {
+                    modal.style.display = 'block';
+                    modalImg.src = image.src;
+                    caption.textContent = image.alt || 'Image preview';
+                });
+            });
+        
+            closeModal.addEventListener('click', () => {
+                modal.style.display = 'none';
+            });
+        }
+        
+    }
 
 
 document.addEventListener('DOMContentLoaded', fetchAndDisplayPost);
