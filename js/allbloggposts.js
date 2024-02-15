@@ -52,7 +52,7 @@ function fetchBlogPosts() {
 
 function displayPosts(posts) {
     const postsContainer = document.getElementById('blogPostsContainer');
-    postsContainer.innerHTML = ''; // Tømmer containeren før nye innlegg legges til
+    postsContainer.innerHTML = ''; 
 
     posts.forEach(post => {
         const postElement = document.createElement('div');
@@ -75,7 +75,7 @@ function displayPosts(posts) {
     // Legger til event listeners på alle klikkbare bilder etter at de er lagt til DOM
     document.querySelectorAll('.clickable-image').forEach(image => {
         image.addEventListener('click', function(event) {
-            event.preventDefault(); // Forhindrer navigeringen
+            event.preventDefault(); 
             const modal = document.getElementById('imageModal');
             const modalImg = document.getElementById('modalImage');
             const caption = document.getElementById('caption');
