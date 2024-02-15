@@ -216,10 +216,13 @@
     margin: 20px auto;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #FCDCB4;
+    
 }
 
 .form-group {
     margin-bottom: 20px;
+
 }
 
 .form-group label {
@@ -375,14 +378,19 @@ button:hover {
 .thank-you, .contact-info {
     text-align: center; 
     padding: 20px; 
-    margin: 20px 0; 
+    margin: 20px auto; 
     background-color: #FCDCB4;
+    border: 2px solid #000;
 }
 
 .thank-you img, .contact-info img {
     max-width: 100%;
     height: auto; 
     margin-bottom: 20px; 
+}
+.thank-you{
+    margin-top: 20px;
+
 }
 
 .thank-you p, .contact-info p {

@@ -100,3 +100,20 @@
         font-size: 14px; 
     }
 }
+
+/* contact form and site info */
+@media only screen and (max-width: 768px) {
+    .thank-you p, .contact-info p {
+        padding: 0 15px; 
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .thank-you img, .contact-info img {
+        width: 80%; 
+    }
+    
+    .thank-you p, .contact-info p {
+        font-size: 14px; 
+    }
+}
