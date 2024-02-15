@@ -52,24 +52,51 @@ function fetchBlogPosts() {
 
 function displayPosts(posts) {
     const postsContainer = document.getElementById('blogPostsContainer');
-    postsContainer.innerHTML = ''; 
+    postsContainer.innerHTML = ''; // Tømmer containeren før nye innlegg legges til
 
     posts.forEach(post => {
         const postElement = document.createElement('div');
         postElement.className = 'post'; 
 
-        const postLink = `<a href="specificblog.html?id=${post.id}">`;
+        // Oppdaterer denne delen for å inkludere en onclick-handler på bildet
         const imageUrl = post._embedded?.['wp:featuredmedia']?.[0]?.source_url || 'fallback_image_url_here.jpg';
-        
         postElement.innerHTML = `
-            ${postLink}
+            <a href="specificblog.html?id=${post.id}">
                 <h2>${post.title.rendered}</h2>
-                <img src="${imageUrl}" alt="Featured Image">
+                <img src="${imageUrl}" alt="${post.title.rendered}" class="clickable-image">
                 <p>${post.excerpt.rendered}</p>
             </a>
         `;
         postsContainer.appendChild(postElement);
     });
+
+    // Legger til event listeners på alle klikkbare bilder etter at de er lagt til DOM
+    document.querySelectorAll('.clickable-image').forEach(image => {
+        image.addEventListener('click', function() {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const caption = document.getElementById('caption');
+            modal.style.display = "block";
+            modalImg.src = this.src;
+            caption.innerHTML = this.alt;
+        });
+    });
+}
+
+// Modal logikk
+const modal = document.getElementById('imageModal');
+const closeModal = document.getElementById('closeModal');
+
+// Lukker modalen når brukeren klikker på (X)
+closeModal.onclick = function() {
+    modal.style.display = "none";
+}
+
+// Lukker modalen når brukeren klikker hvor som helst utenfor bildet
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
 }
 
 
