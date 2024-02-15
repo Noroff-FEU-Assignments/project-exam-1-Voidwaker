@@ -57,13 +57,14 @@ function displayPosts(posts) {
     posts.forEach(post => {
         const postElement = document.createElement('div');
         postElement.className = 'post'; 
-
+    
         const imageUrl = post._embedded?.['wp:featuredmedia']?.[0]?.source_url || 'fallback_image_url_here.jpg';
         postElement.innerHTML = `
             <div>
                 <h2>${post.title.rendered}</h2>
                 <img src="${imageUrl}" alt="${post.title.rendered}" 
                      class="clickable-image" 
+                     data-id="${post.id}" // Setter postens ID som en data attributt
                      data-title="${post.title.rendered}" 
                      data-excerpt="${post.excerpt.rendered}">
                 <p>${post.excerpt.rendered}</p>
@@ -71,18 +72,27 @@ function displayPosts(posts) {
         `;
         postsContainer.appendChild(postElement);
     });
+    
 
     // Legger til event listeners på alle klikkbare bilder etter at de er lagt til DOM
     document.querySelectorAll('.clickable-image').forEach(image => {
         image.addEventListener('click', function(event) {
-            event.preventDefault(); 
+            event.preventDefault(); // Forhindrer navigeringen
             const modal = document.getElementById('imageModal');
             const modalImg = document.getElementById('modalImage');
             const caption = document.getElementById('caption');
             modal.style.display = "block";
             modalImg.src = this.src;
-            // Setter tittel og utdrag basert på data- attributtene
-            caption.innerHTML = `<h2>${this.dataset.title}</h2><p>${this.dataset.excerpt}</p>`;
+    
+            // Henter post-ID fra bilde-data attributter
+            const postId = this.getAttribute('data-id');
+    
+            // Oppdaterer caption for å inkludere en "Les Mer"-knapp med en lenke til den spesifikke bloggpost-siden
+            caption.innerHTML = `
+                <h2>${this.dataset.title}</h2>
+                <p>${this.dataset.excerpt}</p>
+                <a href="specificblog.html?id=${postId}" class="read-more-btn">Les Mer</a>
+            `;
         });
     });
 }

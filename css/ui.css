@@ -349,4 +349,17 @@ button:hover {
     cursor: pointer;
 }
 
-  
+  /* read more button when clicking thru modal*/
+  .read-more-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.read-more-btn:hover {
+    background-color: #0056b3;
+}
