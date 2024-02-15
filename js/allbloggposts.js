@@ -58,14 +58,16 @@ function displayPosts(posts) {
         const postElement = document.createElement('div');
         postElement.className = 'post'; 
 
-        // Oppdaterer denne delen for å inkludere en onclick-handler på bildet
         const imageUrl = post._embedded?.['wp:featuredmedia']?.[0]?.source_url || 'fallback_image_url_here.jpg';
         postElement.innerHTML = `
-            <a href="specificblog.html?id=${post.id}">
+            <div>
                 <h2>${post.title.rendered}</h2>
-                <img src="${imageUrl}" alt="${post.title.rendered}" class="clickable-image">
+                <img src="${imageUrl}" alt="${post.title.rendered}" 
+                     class="clickable-image" 
+                     data-title="${post.title.rendered}" 
+                     data-excerpt="${post.excerpt.rendered}">
                 <p>${post.excerpt.rendered}</p>
-            </a>
+            </div>
         `;
         postsContainer.appendChild(postElement);
     });
@@ -74,17 +76,17 @@ function displayPosts(posts) {
     document.querySelectorAll('.clickable-image').forEach(image => {
         image.addEventListener('click', function(event) {
             event.preventDefault(); // Forhindrer navigeringen
-            event.stopPropagation(); // Stopper hendelsen fra å boble opp til overordnede elementer
-    
             const modal = document.getElementById('imageModal');
             const modalImg = document.getElementById('modalImage');
             const caption = document.getElementById('caption');
             modal.style.display = "block";
             modalImg.src = this.src;
-            caption.innerHTML = this.alt;
+            // Setter tittel og utdrag basert på data- attributtene
+            caption.innerHTML = `<h2>${this.dataset.title}</h2><p>${this.dataset.excerpt}</p>`;
         });
     });
-    
+}
+
 
 // Modal logikk
 const modal = document.getElementById('imageModal');

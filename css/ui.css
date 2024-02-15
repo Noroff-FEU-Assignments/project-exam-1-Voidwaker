@@ -308,6 +308,8 @@ button:hover {
     overflow: auto;
     background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.9);
+    color: #fff;
+    
 }
 
 .modal-content {
@@ -325,6 +327,19 @@ button:hover {
     font-size: 40px;
     font-weight: bold;
     cursor: pointer;
+    color: #fff;
+}
+#caption{
+    color: #fff;
+    max-width: 80%;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+#caption h2, #caption p {
+    color: #fff;
+
 }
 
 .close:hover,
