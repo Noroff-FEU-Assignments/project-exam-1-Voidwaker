@@ -17,12 +17,12 @@ function getQueryParam(param) {
 
 function fetchBlogPosts() {
     showLoader(); 
-    const blogPostsURL = 'https://bollingvaaler.no/wp-json/wp/v2/posts?_embed';
+    const blogPostsURL = 'https://bollingvaaler.no/wp-json/wp/v2/posts?_embed&per_page=12';
     fetch(blogPostsURL)
         .then(response => response.json())
         .then(posts => {
             // Viser de første 8 innleggene først
-            displayPosts(posts.slice(0, 8));
+            displayPosts(posts.slice(0, 10));
 
             // Sjekker om det er flere enn 8 innlegg
             const viewAllButton = document.getElementById('viewAllButton');
