@@ -369,3 +369,24 @@ button:hover {
 .read-more-btn:hover, .close:hover {
     background-color: #0056b3;
 }
+
+
+/* contact page */
+.thank-you, .contact-info {
+    text-align: center; 
+    padding: 20px; 
+    margin: 20px 0; 
+    background-color: #FCDCB4;
+}
+
+.thank-you img, .contact-info img {
+    max-width: 100%;
+    height: auto; 
+    margin-bottom: 20px; 
+}
+
+.thank-you p, .contact-info p {
+    max-width: 600px; 
+    margin: auto; 
+    line-height: 1.6; 
+}
