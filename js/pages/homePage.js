@@ -70,7 +70,7 @@ export function initializeCarousel(posts) {
             imageContainer.appendChild(imageElement);
         });
 
-        // Nå som bildene er lastet, initialiser karusellen
+        
         initializeCarousel(images);
     }
 
