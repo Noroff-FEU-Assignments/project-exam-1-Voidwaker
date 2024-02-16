@@ -1,7 +1,6 @@
 let currentIndex = 0;
 let autoRotateInterval;
-let postsData = []; // Holder på innleggsdataene
-const rotationDelay = 10000; // 10 sekunder for automatisk rotasjon
+let postsData = []; 
 
 document.addEventListener('DOMContentLoaded', () => {
     fetchBlogPosts();
@@ -20,7 +19,6 @@ function hideLoader() {
         loader.style.display = 'none';
     }
 }
-
 
 function fetchBlogPosts() {
     showLoader();
@@ -54,14 +52,14 @@ function displayPost(post) {
 
 function setupNavigationButtons() {
     const navigationContainer = document.getElementById('navigationContainer');
-    navigationContainer.innerHTML = ''; // Tømmer tidligere navigasjonsknapper
+    navigationContainer.innerHTML = '';
 
     const prevButton = document.createElement('button');
-    prevButton.innerHTML = '&#10094;'; // Venstre pil
+    prevButton.innerHTML = '&#10094;';
     prevButton.addEventListener('click', () => changePost(-1));
 
     const nextButton = document.createElement('button');
-    nextButton.innerHTML = '&#10095;'; // Høyre pil
+    nextButton.innerHTML = '&#10095;';
     nextButton.addEventListener('click', () => changePost(1));
 
     navigationContainer.appendChild(prevButton);
@@ -76,11 +74,21 @@ function changePost(direction) {
 }
 
 function startAutoRotate() {
+    // Bestemmer rotasjonshastigheten basert på enhetstypen
+    const mobileRotationDelay = 5000; // 5 sekunder for mobile
+    const desktopRotationDelay = 10000; // 10 sekunder for desktop
+    const isMobile = window.innerWidth <= 768; 
+
+    // Velger rotasjonshastighet basert på skjermstørrelse
+    const currentDelay = isMobile ? mobileRotationDelay : desktopRotationDelay;
+
+    clearInterval(autoRotateInterval); 
     autoRotateInterval = setInterval(() => {
         currentIndex = (currentIndex + 1) % postsData.length;
         displayPost(postsData[currentIndex]);
-    }, rotationDelay);
+    }, currentDelay);
 }
+
 
 
 

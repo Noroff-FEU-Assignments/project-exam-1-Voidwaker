@@ -132,6 +132,7 @@
 
 .border-carousel{
     background-color: #FCDCB4;
+    min-height: 200px;
     margin-top: 50px;
     padding: 50px;
     margin-bottom: 50px;
@@ -201,10 +202,9 @@
     left: 50%;
     transform: translateX(-50%); 
     display: flex;
-    gap: 550px; /* Gir litt plass mellom knappene */
+    gap: 550px; 
+
 }
-
-
 
 /* contact*/
 .contact-form {
