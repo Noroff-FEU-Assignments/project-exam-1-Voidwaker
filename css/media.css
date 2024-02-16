@@ -75,6 +75,25 @@
         font-size: 14px;
     }
 }
+#blogPostsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+#viewAllButton, #viewLessButton {
+    
+    font-size: 14px;
+    padding: 10px 20px;
+}
+
+#imageModal .modal-content, #caption {
+    
+    width: 100%;
+    font-size: 14px;
+}
+
+
 
 /* Tilpasser for skjermer opp til 480px */
 @media only screen and (max-width: 480px) {
@@ -90,6 +109,20 @@
     .logo a {
         padding: 0 10px;
     }
+    .close {
+        top: 5px;
+        right: 10px;
+        font-size: 24px;
+    }
+
+    .modal-content {
+        width: 95%;
+    }
+
+    #caption {
+        font-size: 14px;
+    }
+
 }
 
 /* Tilpasser for skjermer opp til 400px */
@@ -124,5 +157,24 @@
     #postContainer h1,
     #postContainer p {
         font-size: 18px; 
+    }
+    #viewAllButton, #viewLessButton {
+        padding: 8px 15px;
+        font-size: 12px;
+    }
+
+    #imageModal .modal-content, #caption {
+        font-size: 12px;
+    }
+    .close {
+        font-size: 20px;
+    }
+
+    .modal-content, .close {
+        width: 100%; 
+    }
+
+    #caption {
+        font-size: 12px;
     }
 }
