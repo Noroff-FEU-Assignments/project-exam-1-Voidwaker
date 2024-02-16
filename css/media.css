@@ -30,7 +30,6 @@
         cursor: pointer;
     }
 }
-
 /* Tilpasser for skjermer opp til 720px */
 @media only screen and (max-width: 720px) {
     #navigationContainer {
@@ -127,4 +126,3 @@
         font-size: 18px; 
     }
 }
-
