@@ -1,218 +1,131 @@
-@media (max-width: 768px) {
-    .post img {
-        width: 90%;
-        object-fit: contain;
-    }
-}
-
-@media (max-width: 600px) {
-    .primary-header, .footer-container, #postsContainer, .contact-form {
-        padding: 15px;
-        margin: 10px;
-    }
-
-    #postContainer, .contact-form {
-        padding: 10px;
-        margin: 10px;
-    }
-}
-
-@media (max-width: 380px) {
-    .primary-header a, .footer-section li, .post h2, .about-page-content h1, .about-page-content p, .text-box {
-        font-size: 14px;
-    }
-}
-
-
-/* media for navigation for mobile  i karusellen*/
+/* Største først: Tilpasser for skjermer opp til 768px */
 @media only screen and (max-width: 768px) {
     #postsContainer h2 {
         display: none;
     }
-    #postsContainer img {
+    #postsContainer img,
+    .carousel img {
         width: 100%;
         height: auto;
-        object-fit: cover; 
+        object-fit: cover;
     }
-}
-    
+    .border-carousel,
+    .carousel {
+        padding: 15px;
+        min-height: 150px;
+    }
+    .thank-you p,
+    .contact-info p {
+        padding: 0 15px;
+    }
+    .modal-content {
+        width: 90%;
+    }
     #navigationContainer button {
         background-color: rgba(0,0,0,0.5);
         color: white;
         border: none;
         padding: 10px 20px;
-        font-size: 18px; 
+        font-size: 18px;
         cursor: pointer;
     }
-
-
-
-@media only screen and (max-width: 480px) {
-    .border-carousel, .carousel {
-        padding: 10px;
-    }
-
-    .carousel img {
-        max-height: 150px; 
-    }
-
-    #navigationContainer > * {
-        font-size: 24px; 
-    }
 }
 
-@media only screen and (max-width: 300px) {
-    .carousel img {
-        max-height: 100px; 
-    }
-
-    #navigationContainer > * {
-        margin: 0 5px; 
-    }
-}
-@media only screen and (max-width: 768px) {
-    .border-carousel {
-        padding: 15px;
-        
-        min-height: 150px; 
-    }
-
-    .carousel img {
-        max-width: 100%;
-        height: auto;
-    }
-}
-
-@media only screen and (max-width: 480px) {
-    .border-carousel {
-        padding: 10px;
-        min-height: 100px; 
-    }
-}
-
-
-/* Tilpasser for skjermer mindre enn 600px */
-@media (max-width: 600px) {
-    #navigationContainer {
-        gap: 200px; 
-    }
-}
-
-/* Tilpasser for skjermer mindre enn 400px */
-@media (max-width: 400px) {
-    #navigationContainer {
-        gap: 100px; 
-    }
-}
-
-/* Tilpasser for skjermer ned til 300px */
-@media (max-width: 300px) {
-    #navigationContainer {
-        bottom: 60%; 
-        gap: 50px; 
-    }
-}
-@media (max-width: 300px) {
-    #prevButton, #nextButton {
-        width: 24px; 
-        height: 24px;
-        font-size: 16px; 
-    }
-}
-
-@media (max-width: 720px) {
+/* Tilpasser for skjermer opp til 720px */
+@media only screen and (max-width: 720px) {
     #navigationContainer {
         left: 50%;
         transform: translate(-50%, -50%);
-        bottom: 50%; 
-        top: 50%; 
+        bottom: 50%;
+        top: 50%;
     }
 }
 
-#navigationContainer {
-    z-index: 10;
-}
-
-
-
-/* spesific blogpost */
-@media (max-width: 600px) {
+/* Tilpasser for skjermer opp til 600px */
+@media only screen and (max-width: 600px) {
+    .primary-header,
+    .footer-container,
+    #postsContainer,
+    .contact-form,
     #postContainer {
         padding: 10px;
+        margin: 10px;
     }
-
-    #postContainer h1 {
-        font-size: 20px; 
+    .nav-section a,
+    .logo a,
+    .post h2,
+    .about-page-content h1,
+    .about-page-content p,
+    .text-box {
+        font-size: 14px;
     }
-
-    #postContainer p {
-        font-size: 16px; 
+    #navigationContainer {
+        gap: 200px;
     }
-}
-
-/* Tilpasser for veldig små skjermer (ned til 300px) */
-@media (max-width: 300px) {
-    #postContainer h1 {
-        font-size: 18px; 
+    .thank-you img,
+    .contact-info img {
+        width: 80%;
     }
-
-    #postContainer p {
-        font-size: 14px; 
+    .thank-you p,
+    .contact-info p,
+    #caption {
+        font-size: 14px;
     }
-}
-
-/* contact form and site info */
-@media only screen and (max-width: 768px) {
-    .thank-you p, .contact-info p {
-        padding: 0 15px; 
-    }
-}
-
-@media only screen and (max-width: 480px) {
-    .thank-you img, .contact-info img {
-        width: 80%; 
-    }
-    
-    .thank-you p, .contact-info p {
-        font-size: 14px; 
-    }
-}
-
-
-/* all blogposts */
- @media only screen and (max-width: 768px) {
-    .modal-content {
-        width: 90%;
-    }
-}
-
- @media only screen and (max-width: 480px) {
-    .nav-section a, .logo a {
-        padding: 0 10px;
-    } 
-
     button {
         padding: 8px 16px;
         margin: 10px;
         font-size: 14px;
     }
+}
 
-    .modal-content {
+/* Tilpasser for skjermer opp til 480px */
+@media only screen and (max-width: 480px) {
+    .carousel img {
+        max-height: 150px;
+    }
+    #navigationContainer > *,
+    .modal-content,
+    .close {
         width: 95%;
     }
-
-    #caption {
-        padding: 5px 0;
-        font-size: 14px;
+    .nav-section a,
+    .logo a {
+        padding: 0 10px;
     }
 }
 
-@media only screen and (max-width: 300px) {
-    .nav-section a, .logo a {
-        padding: 0 5px;
+/* Tilpasser for skjermer opp til 400px */
+@media only screen and (max-width: 400px) {
+    #navigationContainer {
+        gap: 100px;
     }
+}
 
-    .modal-content, .close {
+/* Tilpasser for skjermer ned til 300px */
+@media only screen and (max-width: 300px) {
+    .border-carousel {
+        padding: 10px;
+        min-height: 100px;
+    }
+    #navigationContainer {
+        bottom: 60%;
+        gap: 50px;
+    }
+    #prevButton, #nextButton {
+        width: 24px;
+        height: 24px;
+        font-size: 16px;
+    }
+    .nav-section a,
+    .logo a,
+    .modal-content,
+    .close {
+        padding: 0 5px;
         width: 100%;
     }
+    #postContainer h1,
+    #postContainer p {
+        font-size: 18px; 
+    }
 }
+

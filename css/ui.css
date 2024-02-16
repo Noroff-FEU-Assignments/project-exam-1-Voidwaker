@@ -130,13 +130,14 @@
     right: 10px;
 }
 
-.border-carousel{
+.border-carousel {
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     background-color: #FCDCB4;
-    min-height: 200px;
-    margin-top: 50px;
-    padding: 50px;
-    margin-bottom: 50px;
+    min-height: 200px; 
 }
+
 /*------------------------------------*/
 /* spesific blogpost */
 #postContainer {
@@ -157,7 +158,7 @@
 
 /* Stil for bildet i bloggposten */
 #postContainer img {
-    max-width: 100%; /
+    max-width: 100%;
     }
 
 /* Stil for tekstinnholdet */
@@ -188,7 +189,7 @@
 }
 
 #navigationContainer button:hover {
-    background-color: rgba(0,0,0,0.1);
+    background-color: #000;
 }
 
 #navigationContainer {
@@ -198,11 +199,11 @@
 #navigationContainer {
     display: flex;
     position: absolute;
-    bottom: 50%; 
+    bottom: 5%; 
     left: 50%;
     transform: translateX(-50%); 
     display: flex;
-    gap: 550px; 
+    
 
 }
 
