@@ -42,6 +42,7 @@
     background-color: #FCDCB4;
     max-width: 1200px; 
     gap: 20px; 
+    align-items: center;
 }
 
 .post {
