@@ -21,11 +21,15 @@ _ _ _
 -- All blog Posts
 
 on the all blogposts page, it was 1 requirement that it should diuspalyu 10 and have a button to wiev the rest(12 in total) so i made it, and made a modal to give the viewer an nice prewive of the blogpost, kept the design the same as on the other pages, with some nice cards to make it clean and simple to navigate, and not trying to make it boring. and i also added a "see Less" button after you have opened the "wiev more" button so you could go back to only view 10 of the blogposts if you wanted that insted of seeing all the blogposts.
-
+_ _ _
 ** Built with:
+
 -HTML
+
 -JAVASCRIPT
+
 -CSS
+
 -WORDPRESS
 _ _ _ 
 
