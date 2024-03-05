@@ -40,7 +40,19 @@ Clone the repo
 Run repo in a code editor, I suggest using "VScode".
 
 Choose index.html and open in live server.
+_ _ _
 
+#### Contributing
+This repo is not open for any contribuitons!
+_ _ _
+#### contact
+Email me: Sigurdvaaler@hoitmail.com
+
+DM me on Discord: voidwaker1
+
+DM me on Twitter:@Situasjon
+
+_ _ _
 
 
 
