@@ -7,16 +7,20 @@ the exam was to make a blog, so i went for an fiction blog written by a dog name
 I choose to make a calm and easy to navigate blog, so its easy for the user to navigate to the desired blogpost, i felt a bit fancy when i made the blog, so the carouselle that was a requirement on the hompepage, i automated it, to sycle thru the pictures every 10 seconds when your on desktop, and every 5 sec when your on mobile.
 _ _ _
 ## Site Purpose:
+The Purpose of the site is for Entertaining and showcasing what i can do as an Front-End dev. all about the dog oda (my real dogs name) and what she things is fun to do in the world, i got to showcase how i handle Javascript, CSS, HTML in this exam, and i hope the viewer enjois the site! 
 _ _ _
 ### Description
 -- homepage
+
 there was 1 hard requirement in the brief for the homepage, and that was an carouselles that could be navigatet (lates posts) on your homepage, I tried to keep my design as clean and easy to understand as possible, without making it too boring to look at. when i built the carouselle i wanted it to be automaded incase the viewer wanted to read some of the other blogposts, and the carouselle could go thru the latest posts without needing any interaction, making it simple for the user, you also have the option to go thru the carouselle manually if thats what you want. 
 _ _ _
 -- Contact page
+
 the contat page har 1 hard requirement aswell, and that was that the contat form had some validation, passowrd length, name had to be over 5 characters, had to be an valid email, tried to follow the style i had on the previose pages, and make it as clean and simple as possible without making it boring, i think that was werry hard, but we got there in the end!
 _ _ _
 -- All blog Posts
 
+on the all blogposts page, it was 1 requirement that it should diuspalyu 10 and have a button to wiev the rest(12 in total) so i made it, and made a modal to give the viewer an nice prewive of the blogpost, kept the design the same as on the other pages, with some nice cards to make it clean and simple to navigate, and not trying to make it boring. and i also added a "see Less" button after you have opened the "wiev more" button so you could go back to only view 10 of the blogposts if you wanted that insted of seeing all the blogposts.
 
 ** Built with:
 -HTML
