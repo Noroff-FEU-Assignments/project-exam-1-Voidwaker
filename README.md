@@ -1,68 +1,49 @@
-## Project Exam 1
+- - -
+![Skjermbilde 2024-02-21 125326](https://github.com/Noroff-FEU-Assignments/project-exam-1-Voidwaker/assets/128046262/c270d3ea-1063-42c1-93dc-59188f0959e8)
+_ _ _
+# Odas Blogg - Exame1
+this was our final exam of the 1 year, and it has to be the biggest assignment we have done, showcasing what we have learned over the corse of a year. javascript, cms, html and css was used to bring this exam together.
+the exam was to make a blog, so i went for an fiction blog written by a dog named oda, showcasing difffrent things the dog "had" done during the year, every blogpost was fetched fron an api i had set up in wordpress.
+I choose to make a calm and easy to navigate blog, so its easy for the user to navigate to the desired blogpost, i felt a bit fancy when i made the blog, so the carouselle that was a requirement on the hompepage, i automated it, to sycle thru the pictures every 10 seconds when your on desktop, and every 5 sec when your on mobile.
+_ _ _
+## Site Purpose:
+_ _ _
+### Description
+-- homepage
+there was 1 hard requirement in the brief for the homepage, and that was an carouselles that could be navigatet (lates posts) on your homepage, I tried to keep my design as clean and easy to understand as possible, without making it too boring to look at. when i built the carouselle i wanted it to be automaded incase the viewer wanted to read some of the other blogposts, and the carouselle could go thru the latest posts without needing any interaction, making it simple for the user, you also have the option to go thru the carouselle manually if thats what you want. 
+_ _ _
+-- Contact page
+the contat page har 1 hard requirement aswell, and that was that the contat form had some validation, passowrd length, name had to be over 5 characters, had to be an valid email, tried to follow the style i had on the previose pages, and make it as clean and simple as possible without making it boring, i think that was werry hard, but we got there in the end!
+_ _ _
+-- All blog Posts
 
-## Goal
 
-To put into practice the skills learned over your first year of studies.
+** Built with:
+-HTML
+-JAVASCRIPT
+-CSS
+-WORDPRESS
+_ _ _ 
 
-## Brief
-You have been tasked with creating a blog site. You can choose the design and topics covered on the blog, but it should have at least the following pages:
--	Home page
--	About page
--	List of blog posts
--	Blog post specific pages
--	Contact page.
+#### Getting Started
+**Installing**
+Clone the repo:
 
-### Home Page
+git clone https://github-repo
 
-The home page should feature a 'Latest Posts' section, designed as a carousel (slider) for the desktop version. As an example, you could display four posts at a time, although you're welcome to adjust this number to better suit your design. Users should be able to click an arrow on the right to scroll through to the next set of posts, and an arrow on the left to view the previous set. For the mobile version, you are free to alter the layout as you deem appropriate, without being tied to a carousel format.
+[[View the live website on Netlify](https://poetic-puffpuff-7681b8.netlify.app)](netlify link)
 
-### Blog Page
+Running
 
-The blog posts page should show the first 10 blogs, and the user should click to view more results which then show underneath the first 10 blogs.
+Clone the repo
 
-### Blog Specific Page
+Run repo in a code editor, I suggest using "VScode".
 
-The content of the blog specific page should be dynamically built using a query string parameter based on whatever link the user clicked. The title of the blog specific page should change based on the blog that has been clicked on e.g. “My Blog | An Article I Wrote”.
+Choose index.html and open in live server.
 
-If images on the blog specific page are clicked, a modal should appear giving the user a bigger view of that image. Clicking outside the image should hide the modal.
 
-### Contact page
 
-Create a contact us page, there should be 4 textboxes on this page.
--	Name (Should be more than 5 characters long)
--	Email address (Must be a valid email address)
--	Subject (Should be more than 15 characters long)
--	Message content (Should be more than 25 characters long)
 
-Please use JavaScript for validation, show error messages if the values in the textboxes do not meet the requirements.
 
-### WordPress
 
-The content for your website will be stored on a WordPress installation used as a Headless CMS. It’s important to note that we are only using WordPress to provide an API and add content for the blog. You should not submit a link to a WordPress site, but build your website using HTML, CSS and JavaScript and making a call to the WordPress REST API to fetch the data. 
-
-The project has two aspects:
--	API from your WordPress installation
--	Your website built with HTML, CSS and JavaScript
-
-You will need to add at least 12 blogs for your website. You can use lorem ipsum for paragraphs if you need, but headings, images etc. should all make sense.
-
-Note that this is an exam, and therefore tutor support will be limited as per the study plan.
-
-## Level 1 Process
-
-1.	Decide on the theme for the blog you’re going to make
-2.	Create a prototype of the website
-3.	Install WordPress on your web host and add the blogs on the admin panel. 
-4.	Use the GitHub repo created by GitHub Classroom for your files and deploy to Netlify
-5.	Build your website using HTML, CSS and JavaScript making a call to the WordPress REST API to fetch your data.
-6.	Install Hotjar on your website.
-7.	Ask users to test your website, and adjust based on their feedback and any insights from Hotjar.
-8.	Write a report documenting your project (template provided in this repository).
-9.	Submit your report as a PDF and a link to both your Netlify deployment and your GitHub repo.
- 
-## Level 2 Process (optional)
-
-1.	You can try adding a sort, filter, or search to the blog posts page allowing users to find the blog post more easily that they’re looking for. 
-2.	Post the data from the contact form to WordPress so you have the details saved.
-3.	Allow users to submit comments on a blog post, and post this data to WordPress
 
